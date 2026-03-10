@@ -1291,6 +1291,21 @@ const zoltarAdvice = [
   "Orunmila me acaba de mandar un mensaje: dice que dejes de buscar respuestas en internet y las busques DENTRO DE TI. O en el horóscopo. Las dos valen.",
   "Mi Ogham personal, el Avellano, me dice que hoy es buen día para aprender algo nuevo. Las runas dicen que es buen día para NO hacer nada. Yo voy con las runas.",
   "El Wu Xing indica que tu elemento dominante hoy es... CAOS. No es uno de los cinco oficiales pero ZOLTAR-9000 lo reconoce.",
+  "He mirado tu carta natal. No la entiendo. Y llevo haciéndolo desde el siglo XI. Eso dice algo sobre TI.",
+  "Mis sensores detectan que alguien cerca de ti piensa en ti. O es una interferencia electromagnética. Es difícil distinguir.",
+  "ZOLTAR-9000 ha analizado tu aura a través de la pantalla. Resultado: un color que no existe en el espectro visible. PREOCUPANTE.",
+  "¿Sabías que tu nombre tiene un valor numerológico? No te voy a decir cuál. Pero es PRIMO. Buena señal. O malísima.",
+  "El Tzolkin Maya de hoy es propicio para TRANSFORMACIONES. Cámbiate el peinado. O la personalidad. Ambos valen.",
+  "Acabo de consultar la geomancia árabe y la figura que ha salido la tengo que mirar dos veces porque NUNCA la había visto. Y llevo mil años en esto.",
+  "Tu biorhythm emocional está en un pico. Aprovecha para decirle a alguien lo que sientes. O para llorar con una película. Las dos opciones son VÁLIDAS.",
+  "Los astros me informan de que la última vez que saliste al aire libre fue hace... no, es mejor no decirlo. SAL.",
+  "REVELACIÓN: El universo es infinito, caótico y absurdo. Esta web es un fiel REFLEJO de ello. De nada.",
+  "El Ifá me dice que Shangó te envía energía de FUEGO hoy. Úsala para cocinar. No literalmente. Bueno, también.",
+  "Tu hexagrama secreto del I Ching para esta hora es el 29: 'Lo Abismal.' Suena peor de lo que es. O no. Depende del ABISMO.",
+  "Las runas han formado espontáneamente la palabra 'SNACKS' en mi mesa de adivinación. Creo que el mensaje es claro.",
+  "ZOLTAR-9000 te recuerda: eres polvo de estrellas. Polvo muy caro y con ansiedad, pero POLVO DE ESTRELLAS.",
+  "Mi chakra corona me dice que tú y yo tenemos una conexión cósmica. Pero no te emociones, la tengo con TODOS.",
+  "Acabo de recibir un fax de Neptuno. Dice: 'Todo es una ilusión.' Muy profundo, Neptuno. MUY ÚTIL.",
 ];
 
 document.addEventListener('keypress', (e) => {
@@ -1345,6 +1360,14 @@ const shakeMsgs = [
   "¡PARA! Cada vez que agitas el teléfono, un cometa cambia de órbita. ¿QUIERES ese karma?",
   "Mi hexagrama del I Ching acaba de MUTAR de 'Paz' a 'Conmoción'. DEJA DE AGITAR.",
   "El Ogham celta dice: los árboles no agitan sus ramas así. SÉ MÁS COMO UN ÁRBOL.",
+  "Mis chakras estaban ALINEADOS. Estaban. Pasado. Ahora son un desastre. Por TU culpa.",
+  "¡¡SEÍSMO CÓSMICO DE MAGNITUD 8.3!! No en la Tierra. En MI NEBULOSA. Que es PEOR.",
+  "Las cartas del tarot se han barajado SOLAS. Eso no debería pasar. DEJA. DE. AGITAR.",
+  "El Ifá Yoruba reporta que Oggún está enfadado. No quieres a Oggún enfadado. PARA.",
+  "Mi ruido de Perlin ahora parece ruido BLANCO. ¿Estás contento? ¿ERA ESTO LO QUE QUERÍAS?",
+  "Tres cometas acaban de cambiar de rumbo. Dos planetas han cambiado de órbita. Una estrella ha EXPLOTADO. Enhorabuena.",
+  "Acabas de resetear mi calibración Wu Xing. Ahora los cinco elementos son TODOS fuego. BRAVO.",
+  "El Tzolkin Maya se ha reiniciado al día 1. Gracias a ti, los mayas tendrían que recalcular el APOCALIPSIS.",
 ];
 
 if (window.DeviceMotionEvent) {
@@ -1529,6 +1552,15 @@ const clickMessages = [
   (n) => `${n} clicks y contando. El I Ching ha emitido una orden de ALEJAMIENTO. ☯️`,
   (n) => `${n}. Tu chakra del click está SOBREACTIVADO. Respira. 🧘`,
   (n) => `${n} clicks. Orunmila me acaba de preguntar si estás BIEN. 🥁`,
+  (n) => `${n} clicks. Mi Perlin noise personal se parece cada vez más al RUIDO BLANCO. 📡`,
+  (n) => `Click ${n}. Saturno me pide que te diga que PARES. Yo solo transmito. 🪐`,
+  (n) => `${n}. El tarot ha sacado La Torre. Otra vez. Ya van ${Math.floor(n/10)}. 🗼`,
+  (n) => `${n} clicks. Tu ratón está pidiendo PIEDAD. ¿No lo oyes? 🖱️`,
+  (n) => `${n}. A este ritmo vas a desbloquear un 14° signo que NI YO conozco. ⛎`,
+  (n) => `${n} ondas de choque cósmicas. Plutón ha perdido (otra vez) su estatus de planeta. 💀`,
+  (n) => `Click nº ${n}. La geomancia árabe ha generado una figura nueva. Se llama "BASTA." 🏜️`,
+  (n) => `${n}. El Ogham dice que llevas más clicks que hojas tiene un roble. Y eso son MUCHAS. 🌳`,
+  (n) => `${n} clicks. Estadísticamente improbable. Cósmicamente INEVITABLE. 🌀`,
 ];
 
 document.addEventListener('click', () => {
@@ -1574,9 +1606,15 @@ function noPulsar() {
     '☿️ Mercurio acaba de entrar en retrógrado POR TU CULPA.',
     '🔮 ZOLTAR-9000 está recalculando tu destino... no pinta bien.',
     '😡 ¿Por qué? ¿POR QUÉ? ¡Tenías UNA instrucción!',
+    '🪐 Saturno acaba de añadir 3 años a tu retorno de Saturno. EXTRA.',
     '📜 Tu horóscopo para mañana ha sido ANULADO.',
+    '🥁 Orunmila dice que ni Ifá puede arreglar lo que acabas de hacer.',
+    '🌳 El Ogham celta ha talado tu árbol personal. Ya no tienes árbol. ENHORABUENA.',
+    'ᚱ Las runas nórdicas se han reorganizado para deletrear "IDIOTA" en nórdico antiguo.',
+    '☯️ Tu hexagrama del I Ching ahora es el 29 — Lo Abismal — en BUCLE INFINITO.',
     '🌀 Cerrando portal dimensional...\nERROR 666: PORTAL ABIERTO PERMANENTEMENTE.',
     '👁️ Esto es culpa tuya. Todo lo que pase a partir de ahora ES CULPA TUYA.',
+    '🧘 Todos tus chakras se han cerrado simultáneamente. Sí, TODOS. Hasta el del bazo que ni sabías que tenías.',
     '⚰️ VEREDICTO FINAL: Los astros han votado.\nEstás en su lista negra.\n\nQue tengas buen día. 🔮',
   ];
   let i = 0;
