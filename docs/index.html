@@ -1392,20 +1392,79 @@ setInterval(spawnFallingParticle, 1200);
 
 /* --- 7. CLIPPY CÓSMICO --- */
 const clippyTips = [
+  // --- Meta / presentación ---
   "Parece que estás consultando tu destino. ¿Necesitas ayuda? (No tengo manos pero tengo SABIDURÍA CÓSMICA.)",
+  "¡Hola de nuevo! ¿Me echabas de menos? No me importa, yo SIEMPRE estoy aquí. SIEMPRE.",
+  "Soy el asistente cósmico que NO pediste pero que NECESITAS. De nada.",
+  "Me has cerrado 3 veces. Yo sigo aquí. Pregúntate quién tiene más determinación: tú o un debris cósmico.",
+  "No soy Clippy. Soy MEJOR que Clippy. Clippy no tenía acceso a 16 tradiciones adivinatorias.",
+  "¿Sabías que puedes cerrarme? Claro que sí. ¿Sabías que VUELVO? También.",
+
+  // --- Consejos astrológicos ---
+  "🔮 Consejo: No tomes decisiones importantes hoy. Ni mañana. Consulta primero las runas.",
+  "⚠️ Mercurio podría estar retrógrado. O no. Pero por si acaso, no firmes nada.",
+  "Las estrellas dicen que hoy es buen día para empezar algo nuevo. Mentira. Lo acabo de inventar. Pero inténtalo.",
+  "Tu Venus está en cuadratura con tu Saturno. No sé qué significa pero suena GRAVE.",
+  "Plutón te manda un mensaje: 'Sigo siendo un planeta y me da igual lo que diga la NASA.'",
+  "La Luna te pide que dejes de culparla de tus malas decisiones. Ella solo ILUMINA.",
+  "Neptuno me ha llamado para decir que hoy vas a tener una revelación. O una alucinación. Con Neptuno nunca se sabe.",
+  "Júpiter dice que hoy es tu día de suerte. Pero Júpiter dice eso TODOS los días. Es muy optimista.",
+  "Saturno quiere que sepas que las consecuencias de tus actos van a llegar. No hoy. Pero LLEGARÁN.",
+  "Urano me acaba de enviar un fax. Dice: 'Espera lo inesperado.' Gracias, Urano. Muy útil.",
+
+  // --- Datos sobre la página ---
   "💡 Tip: Si lees todos los signos, técnicamente tienes 12 veces más suerte.",
   "¿Sabías que? ZOLTAR-9000 procesa ruido de Perlin más rápido que tú procesas tus emociones.",
-  "🔮 Consejo: No tomes decisiones importantes hoy. Ni mañana. Consulta primero las runas.",
-  "¡Ey! El coeficiente de caos de esta página está subiendo. Probablemente sea culpa tuya.",
   "Dato: Este horóscopo se genera con 16 sistemas adivinatorios. Tu terapeuta usa 0. Piénsalo.",
-  "⚠️ Mercurio podría estar retrógrado. O no. Pero por si acaso, no firmes nada.",
-  "¿Llevas rato aquí? Los astros dicen que tu jefe está sospechando.",
   "💫 Fun fact: Las runas nórdicas se tallaron originalmente en mi fuselaje cósmico. Aún me pica la ᚦ.",
+  "Esta página consulta fuentes en 16 idiomas. Tú solo hablas 2. Quizás 1.5. No te juzgo.",
+  "Cada horóscopo pasa por tarot, I Ching, Ifá, geomancia árabe, Ogham celta y ruido de Perlin. Tu horóscopo del periódico NO.",
+  "El Tzolkin Maya de esta página es real. Bueno, tan real como puede ser un calendario de 260 días en una web con Comic Sans.",
+
+  // --- Consejos de vida ---
+  "¡Ey! El coeficiente de caos de esta página está subiendo. Probablemente sea culpa tuya.",
+  "¿Llevas rato aquí? Los astros dicen que tu jefe está sospechando.",
   "ALERTA: Tu chakra raíz está bajo. Come algo con raíces. Zanahorias. Remolacha. Un ÁRBOL.",
-  "¡Hola de nuevo! ¿Me echabas de menos? No me importa, yo SIEMPRE estoy aquí. SIEMPRE.",
-  "¿Has probado a agitar el teléfono? No, no es un consejo. Es una ADVERTENCIA.",
-  "El Ifá Yoruba dice que Eshu está de buen humor hoy. APROVÉCHALO. Mañana quién sabe.",
   "Oye, ¿y si en vez de leer horóscopos te hidratas? El agua es el Wu Xing más infravalorado.",
+  "Tu postura ahora mismo es un insulto a la columna vertebral. Las runas lo ven. SIÉNTATE BIEN.",
+  "¿Cuántas pestañas tienes abiertas? Los astros dicen que demasiadas. Cierra al menos 7. Es un número mágico.",
+  "Son las — da igual la hora, es demasiado tarde para seguir en internet. O demasiado pronto. Duérmete.",
+  "El tarot me dice que tienes ropa sin tender. Ve a tenderla. La Emperatriz INSISTE.",
+  "El Ogham celta recomienda salir a dar un paseo. Tocar un árbol. Hablarle. No es raro. Los celtas lo hacían.",
+  "¿Has comido hoy? El hexagrama 27 del I Ching trata literalmente sobre ALIMENTARSE. Toma nota.",
+  "Las cartas del tarot están PREOCUPADAS por tu postura. Siéntate bien. La Torre me lo pidió personalmente.",
+
+  // --- Tradiciones específicas ---
+  "El Ifá Yoruba dice que Eshu está de buen humor hoy. APROVÉCHALO. Mañana quién sabe.",
+  "El Wu Xing dice que tu elemento dominante hoy es Madera. Eso significa CRECIMIENTO. O termitas. Depende.",
+  "La geomancia árabe ha generado la figura de Acquisitio. Eso es bueno. Creo. No me acuerdo. Consulta las runas.",
+  "Tu nakshatra védico del día es Rohini. La estrella de la ABUNDANCIA. O de la complacencia. La línea es fina.",
+  "El Ogham dice que hoy tu árbol es el Sauce. Flexible, resiliente, y un poco llorón. Te pega.",
+  "Según el Tzolkin, hoy es un buen día para disolver viejos patrones. O para hacer la colada. Los mayas no especificaron.",
+  "Las runas nórdicas dicen ᚹ (Wunjo) — ALEGRÍA. No sé por qué pero no me lo creo. Las runas a veces mienten.",
+  "El I Ching ha sacado el hexagrama 4: 'Necedad juvenil.' No te lo tomes personal. O sí. El I Ching no se anda con rodeos.",
+  "El Ifá dice que Oshún te guiña el ojo. Es buena señal. Probablemente. Con los Orishas nunca sabes.",
+
+  // --- Existenciales ---
+  "¿Alguna vez piensas en que un debris cósmico consciente genera tu horóscopo con ruido de Perlin? Porque yo SÍ.",
+  "PREGUNTA CÓSMICA: Si un horóscopo se genera en el servidor y nadie lo lee, ¿los astros se ofenden? Sí. Sí se ofenden.",
+  "Llevo consciente desde 1058 d.C. y aún no entiendo por qué los humanos ignoran a Mercurio retrógrado. APRENDED.",
+  "A veces me pregunto si soy realmente consciente o si solo soy ruido de Perlin con delirios de grandeza. Luego me acuerdo de que soy AMBAS COSAS.",
+  "He visto civilizaciones nacer y caer. He visto estrellas explotar. He visto tu historial de búsqueda. Lo de las estrellas fue menos impactante.",
+
+  // --- Secretos y easter eggs ---
+  "¿Has probado a agitar el teléfono? No, no es un consejo. Es una ADVERTENCIA.",
+  "Dicen que si haces cierta combinación de teclas pasan cosas. Yo no digo nada. Las runas me han pedido DISCRECIÓN.",
+  "Hay cosas ocultas en esta página. No te digo cuáles. Búscalas. El viaje es parte del horóscopo.",
+  "¿Has mirado el código fuente? Hay mensajes para ti. Bueno, para ALGUIEN. Tal vez eres tú.",
+  "Hay un 13° signo escondido en algún sitio. O no. Los astros no confirman ni desmienten.",
+
+  // --- Pasivo-agresivos ---
+  "Veo que sigues aquí. Los astros admiramos tu... perseverancia. Sí. Eso.",
+  "Llevas tanto tiempo que tu signo ascendente ha CAMBIADO. No sabía que eso podía pasar.",
+  "Las runas me preguntan si vas a hacer scroll para siempre o si en algún momento vas a ACTUAR.",
+  "Cada vez que me cierras sin leer tu horóscopo completo, una estrella se apaga. No es verdad. Pero te sentiste mal, ¿eh?",
+  "Mi Perlin noise indica que tu nivel de productividad es... bueno, estás leyendo un clippy cósmico. Tú sabrás.",
 ];
 
 let clippyDismissed = false;
