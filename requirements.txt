@@ -1,0 +1,6 @@
+httpx>=0.27
+beautifulsoup4>=4.12
+lxml>=5.1
+telethon>=1.37
+noise>=1.2.2
+ephem>=4.1
