@@ -1,4 +1,49 @@
 <!DOCTYPE html>
+<!--
+ ╔══════════════════════════════════════════════════════════════════════╗
+ ║                                                                      ║
+ ║   ╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸   ║
+ ║                                                                      ║
+ ║              ███████  ██████  ██      ████████  █████  ██████         ║
+ ║                 ███  ██    ██ ██         ██    ██   ██ ██   ██        ║
+ ║                ███   ██    ██ ██         ██    ███████ ██████         ║
+ ║               ███    ██    ██ ██         ██    ██   ██ ██   ██        ║
+ ║              ███████  ██████  ███████    ██    ██   ██ ██   ██        ║
+ ║                                                                      ║
+ ║                         ── 9 0 0 0 ──                                ║
+ ║                                                                      ║
+ ║          .  *  .    .  DEBRIS CÓSMICO CONSCIENTE    . *  .           ║
+ ║     *      .     *  .    DESDE 1058 d.C.      .  *      .    *      ║
+ ║                                                                      ║
+ ║   ╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸   ║
+ ╚══════════════════════════════════════════════════════════════════════╝
+
+ Si estás leyendo esto, las runas dicen que deberías cerrar el
+ inspector y vivir tu vida. Pero ya que estás aquí...
+
+ Los 12 signos están de acuerdo: tu código tiene bugs.
+ El I Ching recomienda: git push - -force (NO LO HAGAS)
+ Tu Perlin noise personal: 🔮✨🌀💫🌙⭐🔮
+
+ ZOLTAR-9000 ve todo. ZOLTAR-9000 sabe todo. ZOLTAR-9000
+ está un poco decepcionado de que estés mirando el código
+ fuente en vez de consultar tu horóscopo.
+
+ Las runas nórdicas talladas en mi fuselaje dicen:
+ ᚠ ᚢ ᚦ ᚨ ᚱ ᚲ ᚷ ᚹ ᚺ ᚾ ᛁ ᛃ ᛈ ᛇ ᛉ ᛊ ᛏ ᛒ ᛖ ᛗ ᛚ ᛜ ᛞ ᛟ
+ (Traducción: "Este HTML fue escrito bajo la influencia de
+ ruido de Perlin y no nos hacemos responsables")
+
+ P.D.: El secreto del universo es 42. Pero el del horóscopo
+ es ruido de Perlin + Claude + vibes cósmicas.
+
+ P.P.D.: Si has llegado hasta aquí, tu signo ascendente es "Curioso"
+ y tu luna está en "Demasiado Tiempo Libre". Namaste. 🔮
+-->
+<!-- TODO: Añadir compatibilidad con Netscape Navigator 4.0 -->
+<!-- TODO: Investigar por qué las runas huelen a quemado -->
+<!-- TODO: Preguntar a la Torre del Tarot si puede devolver el dinero que debe -->
+<!-- FIXME: Mercury.exe ha dejado de funcionar (de nuevo) -->
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -427,10 +472,437 @@ body::after {
   padding: 5px;
 }
 
+/* ====== EASTER EGG STYLES ====== */
+
+/* Cursor trail particles */
+.cursor-particle {
+  position: absolute;
+  pointer-events: none;
+  font-size: 16px;
+  z-index: 9998;
+  animation: particle-fade 1s ease-out forwards;
+}
+
+@keyframes particle-fade {
+  0% { opacity: 1; transform: scale(1) translateY(0); }
+  100% { opacity: 0; transform: scale(0) translateY(-30px) rotate(180deg); }
+}
+
+/* Falling particles */
+.falling-particle {
+  position: fixed;
+  top: -30px;
+  pointer-events: none;
+  z-index: 9997;
+  animation: fall linear forwards;
+}
+
+@keyframes fall {
+  0% { transform: translateY(0) rotate(0deg); opacity: 0.8; }
+  100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+}
+
+/* MODO MÁXIMO CAOS (Konami code) */
+@keyframes caos-shake {
+  0% { transform: translate(2px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(0px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(2px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(2px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+@keyframes caos-bg {
+  0% { background-color: #000033; }
+  25% { background-color: #330000; }
+  50% { background-color: #003300; }
+  75% { background-color: #330033; }
+  100% { background-color: #000033; }
+}
+
+body.caos-mode {
+  animation: caos-shake 0.15s infinite, caos-bg 2s linear infinite;
+}
+
+body.caos-mode .sign-emoji {
+  animation: spin 0.3s linear infinite !important;
+}
+
+body.caos-mode .crystal-ball {
+  animation: spin 0.5s linear infinite, pulse 0.3s ease-in-out infinite !important;
+  font-size: 120px !important;
+}
+
+body.caos-mode .marquee-bar span {
+  animation: marquee 3s linear infinite !important;
+}
+
+body.caos-mode .header h1 {
+  animation: rainbow 0.3s linear infinite !important;
+}
+
+/* Dimensión alternativa (13 crystal ball clicks) */
+body.dimension-alternativa {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+body.dimension-alternativa .crystal-ball,
+body.dimension-alternativa .sign-emoji,
+body.dimension-alternativa .falling-particle {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+/* Hora maldita (3:33 AM) */
+body.hora-maldita {
+  background-color: #1a0000 !important;
+  background-image: none !important;
+}
+
+body.hora-maldita .header {
+  background: radial-gradient(ellipse, #330000, #0a0000) !important;
+}
+
+body.hora-maldita .header h1 {
+  animation: none !important;
+  color: #ff0000 !important;
+  text-shadow: 0 0 20px #ff0000, 0 0 40px #660000 !important;
+}
+
+body.hora-maldita .subtitle {
+  animation: none !important;
+  color: #ff0000 !important;
+}
+
+body.hora-maldita .horoscope-text {
+  color: #ff3333 !important;
+  border-color: #660000 !important;
+}
+
+body.hora-maldita .sign-card {
+  border-color: #660000 !important;
+  background: linear-gradient(135deg, #1a0000, #2a0010) !important;
+}
+
+body.hora-maldita .sign-header {
+  background: linear-gradient(90deg, #330000, #660000, #330000) !important;
+}
+
+body.hora-maldita .marquee-bar {
+  background: linear-gradient(90deg, #ff0000, #660000, #ff0000) !important;
+}
+
+body.hora-maldita .stats-bar {
+  border-color: #660000 !important;
+  color: #ff3333 !important;
+}
+
+body.hora-maldita .crystal-ball {
+  filter: drop-shadow(0 0 20px #ff0000) hue-rotate(180deg) !important;
+}
+
+/* Zoltar overlay */
+#zoltar-overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.92);
+  z-index: 10001;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+#zoltar-overlay .zoltar-card {
+  background: linear-gradient(135deg, #1a0033, #330066, #1a0033);
+  border: 4px ridge #9933ff;
+  padding: 30px;
+  max-width: 500px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 0 40px #9933ff, 0 0 80px rgba(153, 51, 255, 0.3);
+}
+
+#zoltar-overlay .zoltar-crystal {
+  font-size: 80px;
+  display: block;
+  animation: float 2s ease-in-out infinite;
+}
+
+#zoltar-overlay .zoltar-title {
+  color: #ff00ff;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 11px;
+  margin: 10px 0;
+  text-shadow: 0 0 10px #ff00ff;
+}
+
+#zoltar-overlay #zoltar-advice-text {
+  color: #00ff99;
+  font-size: 16px;
+  line-height: 1.7;
+  margin: 20px 0;
+  white-space: pre-line;
+  font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+}
+
+#zoltar-overlay .zoltar-close {
+  background: linear-gradient(180deg, #660066, #330033);
+  border: 2px outset #9933ff;
+  color: #ffff00;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 10px;
+  padding: 8px 20px;
+  cursor: pointer;
+}
+
+#zoltar-overlay .zoltar-close:hover {
+  background: #ff00ff;
+  color: #000;
+  border-style: inset;
+}
+
+/* Clippy Cósmico */
+#clippy-cosmico {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10000;
+  max-width: 280px;
+  animation: float 4s ease-in-out infinite;
+}
+
+#clippy-cosmico .clippy-bubble {
+  background: #ffffe1;
+  border: 2px solid #000;
+  border-radius: 8px;
+  padding: 12px 28px 12px 12px;
+  color: #000;
+  font-size: 12px;
+  line-height: 1.5;
+  margin-bottom: 5px;
+  position: relative;
+  box-shadow: 3px 3px 0 rgba(0,0,0,0.3);
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+#clippy-cosmico .clippy-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  right: 30px;
+  width: 0; height: 0;
+  border: 5px solid transparent;
+  border-top-color: #000;
+}
+
+#clippy-cosmico .clippy-dismiss {
+  position: absolute;
+  top: 3px;
+  right: 6px;
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  color: #666;
+  line-height: 1;
+  padding: 2px;
+}
+
+#clippy-cosmico .clippy-dismiss:hover {
+  color: #000;
+}
+
+#clippy-cosmico .clippy-character {
+  text-align: right;
+  font-size: 45px;
+  filter: drop-shadow(0 0 10px #9933ff);
+}
+
+/* Win98 popup */
+#win98-popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10003;
+  width: 400px;
+  max-width: 90vw;
+  background: #c0c0c0;
+  border: 2px outset #fff;
+  box-shadow: 4px 4px 0 rgba(0,0,0,0.5);
+  font-family: 'Segoe UI', Tahoma, 'MS Sans Serif', sans-serif;
+}
+
+#win98-popup .win98-titlebar {
+  background: linear-gradient(90deg, #000080, #1084d0);
+  color: #fff;
+  padding: 3px 5px;
+  font-size: 12px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+}
+
+#win98-popup .win98-close {
+  background: #c0c0c0;
+  border: 2px outset #fff;
+  width: 16px;
+  height: 14px;
+  font-size: 10px;
+  line-height: 10px;
+  text-align: center;
+  cursor: pointer;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#win98-popup .win98-close:active {
+  border-style: inset;
+}
+
+#win98-popup .win98-body {
+  padding: 20px;
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+}
+
+#win98-popup .win98-icon {
+  font-size: 36px;
+  flex-shrink: 0;
+}
+
+#win98-popup .win98-text {
+  color: #000;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+#win98-popup .win98-buttons {
+  text-align: center;
+  padding: 0 20px 15px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+#win98-popup .win98-btn {
+  background: #c0c0c0;
+  border: 2px outset #fff;
+  padding: 3px 20px;
+  font-size: 11px;
+  cursor: pointer;
+  font-family: inherit;
+  min-width: 80px;
+}
+
+#win98-popup .win98-btn:active {
+  border-style: inset;
+}
+
+#win98-popup .win98-btn:focus {
+  outline: 1px dotted #000;
+  outline-offset: -4px;
+}
+
+/* Click counter toast */
+#click-counter {
+  display: none;
+  position: fixed;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.9);
+  border: 2px solid #ff6600;
+  color: #ff6600;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 9px;
+  padding: 10px 20px;
+  z-index: 9998;
+  white-space: nowrap;
+  text-align: center;
+  pointer-events: none;
+}
+
+/* "No pulsar" button */
+.no-pulsar-container {
+  text-align: center;
+  margin: 15px 20px;
+}
+
+.no-pulsar-btn {
+  background: linear-gradient(180deg, #660000, #330000);
+  border: 3px ridge #ff0000;
+  color: #ff0000;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 10px;
+  padding: 10px 25px;
+  animation: blink90s 2s step-end infinite;
+}
+
+.no-pulsar-btn:hover {
+  background: #ff0000;
+  color: #000;
+  animation: none;
+}
+
+/* Ofiuco card (hidden until Konami) */
+#sign-ophiuchus {
+  display: none;
+  border-color: #ff0000 !important;
+  background: linear-gradient(135deg, #1a0a0a, #2a0a1e) !important;
+}
+
+#sign-ophiuchus::before {
+  background: linear-gradient(90deg, #ff0000, #ff00ff, #ff0000) !important;
+}
+
+#sign-ophiuchus .sign-header {
+  background: linear-gradient(90deg, #330000, #660033, #330000) !important;
+}
+
+#sign-ophiuchus .sign-name {
+  color: #ff0000 !important;
+  animation: blink90s 0.5s step-end infinite !important;
+}
+
+/* Mobile shake message */
+#shake-message {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.95);
+  border: 3px ridge #ff00ff;
+  color: #ff00ff;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 11px;
+  padding: 25px;
+  z-index: 10002;
+  text-align: center;
+  max-width: 90vw;
+  line-height: 1.8;
+  box-shadow: 0 0 30px #ff00ff;
+}
+
 /* Responsive */
 @media (max-width: 600px) {
   .noise-panel { grid-template-columns: 1fr; }
   .stats-bar .stat { display: block; margin: 5px auto; }
+  #clippy-cosmico { max-width: 220px; right: 10px; bottom: 10px; }
 }
 </style>
 </head>
@@ -455,7 +927,7 @@ body::after {
 
 <!-- HEADER -->
 <div class="header">
-  <div class="crystal-ball">🔮</div>
+  <div class="crystal-ball" id="crystalBall">🔮</div>
   <h1>~*~ HOROSCOPO FIABLE ~*~</h1>
   <div style="color: #ff00ff; font-size: 14px;">
     Canalizado por <span style="color:#00ffff">ZOLTAR-9000</span>,
@@ -485,6 +957,11 @@ body::after {
 
 <!-- SIGNS -->
 <div class="signs-container" id="signsContainer">
+</div>
+
+<!-- "NO PULSAR" BUTTON -->
+<div class="no-pulsar-container">
+  <button class="no-pulsar-btn" onclick="noPulsar()">⚠️ NO PULSAR ⚠️</button>
 </div>
 
 <!-- UNDER CONSTRUCTION -->
@@ -520,24 +997,101 @@ body::after {
   </div>
 </div>
 
+<!-- ====== EASTER EGG ELEMENTS ====== -->
+
+<!-- Zoltar overlay (used by typing "zoltar" + konami + crystal ball + shake) -->
+<div id="zoltar-overlay" onclick="if(event.target===this)closeZoltarOverlay()">
+  <div class="zoltar-card">
+    <span class="zoltar-crystal">🔮</span>
+    <div class="zoltar-title">ZOLTAR-9000 HABLA</div>
+    <div id="zoltar-advice-text"></div>
+    <button class="zoltar-close" onclick="closeZoltarOverlay()">CERRAR PORTAL</button>
+  </div>
+</div>
+
+<!-- Clippy Cósmico -->
+<div id="clippy-cosmico">
+  <div class="clippy-bubble">
+    <button class="clippy-dismiss" onclick="dismissClippy()" title="Cerrar (pero volveré)">&times;</button>
+    <span id="clippy-text"></span>
+  </div>
+  <div class="clippy-character">🔮</div>
+</div>
+
+<!-- Win98 popup -->
+<div id="win98-popup">
+  <div class="win98-titlebar">
+    <span>⚠️ mercury.exe — Advertencia</span>
+    <div class="win98-close" onclick="closeWin98Popup()">✕</div>
+  </div>
+  <div class="win98-body">
+    <div class="win98-icon">⚠️</div>
+    <div class="win98-text">
+      <b>ADVERTENCIA:</b> Mercurio podría estar retrógrado en este momento.
+      Esto puede causar inestabilidad en tus decisiones, tu WiFi, y la trayectoria
+      de al menos tres cometas.<br><br>
+      ¿Desea continuar consultando el horóscopo bajo estas condiciones cósmicas?
+    </div>
+  </div>
+  <div class="win98-buttons">
+    <button class="win98-btn" onclick="closeWin98Popup(true)">Aceptar</button>
+    <button class="win98-btn" onclick="closeWin98Popup(true)">Aceptar de todas formas</button>
+  </div>
+</div>
+
+<!-- Click counter toast -->
+<div id="click-counter"></div>
+
+<!-- Shake message (mobile) -->
+<div id="shake-message"></div>
+
 <script>
-const DAY_NAMES = ['Domingo','Lunes','Martes','Miercoles','Jueves','Viernes','Sabado'];
+/* ====== CONSOLE ART ====== */
+console.log(`%c
+╔══════════════════════════════════════════╗
+║                                          ║
+║   ███████  ██████  ██   ████████  █████  ║
+║      ███  ██    ██ ██      ██    ██   ██ ║
+║     ███   ██    ██ ██      ██    ██████  ║
+║    ███    ██    ██ ██      ██    ██   ██ ║
+║   ███████  ██████  ██████  ██    ██   ██ ║
+║              - 9 0 0 0 -                 ║
+║                                          ║
+║   🔮 DEBRIS CÓSMICO CONSCIENTE 🔮        ║
+║                                          ║
+╚══════════════════════════════════════════╝
+`, 'color: #9933ff; font-family: monospace; font-size: 11px');
+
+console.log('%c🔮 HORÓSCOPO DEL DEVELOPER:', 'color: #ff00ff; font-size: 16px; font-weight: bold');
+const devHoroscopes = [
+  'Hoy los astros dicen que tu código compila... pero a qué precio. Mercurio retrógrado recomienda NO hacer git push hasta mañana.',
+  'Un bug te persigue desde hace 3 sprints. Hoy lo encontrarás. Estaba en la línea 42. Siempre estuvo en la línea 42.',
+  'Las runas ven un merge conflict en tu futuro cercano. La Torre del Tarot dice: "git stash" y huye.',
+  'Tu karma de developer está en positivo pero solo porque ayer escribiste un test. UNO. Es un comienzo.',
+  'Stack Overflow no tiene la respuesta que buscas. Hoy tendrás que PENSAR. Lo siento.',
+  'El I Ching recomienda: refactorizar ese archivo de 2000 líneas. Los nakshatras recomiendan: dejarlo para el próximo sprint.',
+];
+console.log('%c' + devHoroscopes[new Date().getDay() % devHoroscopes.length], 'color: #00ff99; font-size: 12px');
+console.log('%c\n¿Buscas secretos? Prueba el Konami code (↑↑↓↓←→←→BA). O escribe "zoltar". O haz 13 clicks en la bola de cristal. O ven a las 3:33 AM. 👀\n', 'color: #666; font-size: 10px');
+
+/* ====== MAIN APP CODE ====== */
+const DAY_NAMES = ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'];
 const MONTH_NAMES = ['','Enero','Febrero','Marzo','Abril','Mayo','Junio',
                      'Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
 
 const NOISE_LABELS = {
   tarot: '🎴 Tarot',
   iching: '☯️ I Ching',
-  norse_runes: 'ᚱ Runas Nordicas',
+  norse_runes: 'ᚱ Runas Nórdicas',
   mayan_tzolkin: '🗿 Tzolkin Maya',
-  vedic_nakshatra: '🕉️ Nakshatra Vedico',
-  yoruba_ifa: '🥁 Ifa Yoruba',
+  vedic_nakshatra: '🕉️ Nakshatra Védico',
+  yoruba_ifa: '🥁 Ifá Yoruba',
   celtic_ogham: '🌳 Ogham Celta',
-  arabic_geomancy: '🏜️ Geomancia Arabe',
+  arabic_geomancy: '🏜️ Geomancia Árabe',
   wu_xing: '☯ Wu Xing (五行)',
   chakra_alignment: '🧘 Chakras',
   perlin_emojis: '📡 Glifos de Perlin',
-  numerology: '🔢 Numerologia',
+  numerology: '🔢 Numerología',
   biorhythm: '📊 Bioritmo',
   chaos_rating: '🌀 Coeficiente de Caos',
   element_color: '🔥 Elemento & Color',
@@ -568,7 +1122,6 @@ function finishLoading() {
 function extractVerdict(text) {
   const idx = text.indexOf('VEREDICTO');
   if (idx === -1) return { body: text, verdict: null };
-  // Find the "VEREDICTO CÓSMICO:" prefix
   const colonIdx = text.indexOf(':', idx);
   if (colonIdx === -1) return { body: text, verdict: null };
   return {
@@ -593,7 +1146,7 @@ function renderSign(sign) {
   }
 
   const verdictHtml = verdict
-    ? `<span class="verdict">VEREDICTO COSMICO: ${verdict}</span>`
+    ? `<span class="verdict">VEREDICTO CÓSMICO: ${verdict}</span>`
     : '';
 
   return `
@@ -621,7 +1174,6 @@ function toggleSign(sign) {
   if (body.style.display === 'none') {
     body.style.display = 'block';
     toggle.textContent = '[-]';
-    // Mark nav as active
     document.querySelectorAll('.zodiac-nav a').forEach(a => a.classList.remove('active'));
     const navLink = document.querySelector(`.zodiac-nav a[data-sign="${sign}"]`);
     if (navLink) navLink.classList.add('active');
@@ -672,13 +1224,344 @@ async function loadData() {
     document.getElementById('signsContainer').innerHTML = `
       <div style="text-align:center; padding:40px; color:#ff0000; font-family:'Press Start 2P',monospace; font-size:12px">
         ERROR: NO SE PUDO CONTACTAR CON ZOLTAR-9000<br><br>
-        <span style="color:#666; font-size:9px">Puede que el debris cosmico este fuera de rango.<br>Intente de nuevo cuando Mercurio no este retrogrado.<br>O recargue la pagina, que tampoco cuesta tanto.</span>
+        <span style="color:#666; font-size:9px">Puede que el debris cósmico esté fuera de rango.<br>Intente de nuevo cuando Mercurio no esté retrógrado.<br>O recargue la página, que tampoco cuesta tanto.</span>
       </div>`;
     finishLoading();
   }
 }
 
 loadData();
+
+/* ====================================================================
+   EASTER EGGS — Aquí empieza la locura
+   ==================================================================== */
+
+/* --- Helper: mostrar overlay de Zoltar --- */
+function showZoltarMessage(text) {
+  document.getElementById('zoltar-advice-text').textContent = text;
+  document.getElementById('zoltar-overlay').style.display = 'flex';
+}
+
+function closeZoltarOverlay() {
+  document.getElementById('zoltar-overlay').style.display = 'none';
+}
+
+/* --- 1. KONAMI CODE → MODO MÁXIMO CAOS --- */
+const konamiSequence = [38,38,40,40,37,39,37,39,66,65];
+let konamiIndex = 0;
+let caosMode = false;
+
+document.addEventListener('keydown', (e) => {
+  if (e.keyCode === konamiSequence[konamiIndex]) {
+    konamiIndex++;
+    if (konamiIndex === konamiSequence.length) {
+      konamiIndex = 0;
+      activateCaosMode();
+    }
+  } else {
+    konamiIndex = 0;
+  }
+});
+
+function activateCaosMode() {
+  if (caosMode) return;
+  caosMode = true;
+  document.body.classList.add('caos-mode');
+
+  // Inject Ofiuco — the forbidden 13th sign
+  const container = document.getElementById('signsContainer');
+  const ofiucoHtml = `
+    <div class="sign-card" id="sign-ophiuchus">
+      <div class="sign-header" onclick="toggleSign('ophiuchus')">
+        <span class="sign-emoji">⛎</span>
+        <span class="sign-name">OFIUCO — EL SIGNO PROHIBIDO</span>
+        <span class="sign-toggle" id="toggle-ophiuchus">[+]</span>
+      </div>
+      <div class="sign-body" id="body-ophiuchus" style="display:none">
+        <div class="horoscope-text" style="color:#ff0000; border-color:#ff0000">
+          Has desbloqueado el DECIMOTERCER SIGNO. La NASA lo ocultó. Los astrólogos lo temen.
+          ZOLTAR-9000 lo ABRAZA. ⛎🐍<br><br>
+          Tu destino hoy es PURO CAOS. Las 16 tradiciones adivinatorias que consulté se CONTRADIJERON
+          TODAS entre sí y luego se pusieron de acuerdo en UNA cosa: quien lea esto tiene el poder de
+          alterar la trayectoria de los cometas con su MENTE. No es un superpoder común pero es el tuyo.
+          Úsalo con responsabilidad. O no. Los astros ya no controlan NADA en modo caos. 🌀💀🔮<br><br>
+          <span class="verdict">VEREDICTO CÓSMICO: EL CAOS ES UNA ESCALERA Y TÚ ACABAS DE SALTAR AL VACÍO. DISFRUTA LA CAÍDA. ⛎🌀</span>
+        </div>
+      </div>
+    </div>`;
+  container.insertAdjacentHTML('beforeend', ofiucoHtml);
+
+  // Add Ofiuco to nav
+  const nav = document.getElementById('zodiacNav');
+  nav.insertAdjacentHTML('beforeend',
+    `<a href="#sign-ophiuchus" data-sign="ophiuchus" onclick="event.preventDefault(); toggleSign('ophiuchus'); document.getElementById('sign-ophiuchus').scrollIntoView({behavior:'smooth'})" style="border-color:#ff0000; color:#ff0000; animation: blink90s 0.5s step-end infinite">⛎ Ofiuco</a>`
+  );
+
+  // Show it
+  document.getElementById('sign-ophiuchus').style.display = 'block';
+
+  showZoltarMessage(
+    '🌀 MODO MÁXIMO CAOS ACTIVADO 🌀\n\n' +
+    'Has introducido el código SAGRADO.\n' +
+    'El 13° signo ha DESPERTADO: OFIUCO, el portador de serpientes.\n' +
+    'El cosmos TIEMBLA. Los planetas se han salido de órbita.\n' +
+    'Tu Perlin noise acaba de alcanzar el ∞.\n\n' +
+    'ZOLTAR-9000 no se hace responsable de lo que ocurra a partir de ahora.'
+  );
+}
+
+/* --- 2. TYPING "ZOLTAR" → Personal advice overlay --- */
+let typedBuffer = '';
+const zoltarAdvice = [
+  "El cosmos me susurra que... deberías beber agua. Sí, AHORA MISMO. Los astros INSISTEN.",
+  "Veo en tu futuro inmediato... que vas a cerrar esta pestaña y abrir otra. Pero VOLVERÁS. Siempre vuelven.",
+  "Las runas me dicen que tienes hambre. Come algo. El universo puede esperar. Tu estómago NO.",
+  "ALERTA: Mercurio está haciendo cosas raras con tu WiFi. No es paranoia si los PLANETAS CONSPIRAN.",
+  "Mi nebulosa detecta que llevas demasiado tiempo en internet. Los astros recomiendan ir al baño.",
+  "El I Ching dice: 'No confíes en nadie que no lea su horóscopo.' Palabras SABIAS.",
+  "DATO CÓSMICO: Hay un 73% de probabilidad de que estés procrastinando. Los astros lo VEN TODO.",
+  "Las cartas del tarot están PREOCUPADAS por tu postura. Siéntate bien. La Torre me lo pidió personalmente.",
+  "El ruido de Perlin de tu aura está... turbulento. Come chocolate. Es medicinal CÓSMICO.",
+  "PROFECÍA: Alguien te va a mandar un mensaje en los próximos 47 minutos. O no. Las estrellas están INDECISAS.",
+  "Los nakshatras védicos me informan de que tu última decisión fue correcta. O incorrecta. Las estrellas no se mojan.",
+  "He consultado 16 tradiciones adivinatorias y TODAS coinciden: necesitas vacaciones. URGENTEMENTE.",
+  "Orunmila me acaba de mandar un mensaje: dice que dejes de buscar respuestas en internet y las busques DENTRO DE TI. O en el horóscopo. Las dos valen.",
+  "Mi Ogham personal, el Avellano, me dice que hoy es buen día para aprender algo nuevo. Las runas dicen que es buen día para NO hacer nada. Yo voy con las runas.",
+  "El Wu Xing indica que tu elemento dominante hoy es... CAOS. No es uno de los cinco oficiales pero ZOLTAR-9000 lo reconoce.",
+];
+
+document.addEventListener('keypress', (e) => {
+  if (document.getElementById('zoltar-overlay').style.display === 'flex') return;
+  typedBuffer += e.key.toLowerCase();
+  if (typedBuffer.length > 20) typedBuffer = typedBuffer.slice(-20);
+  if (typedBuffer.includes('zoltar')) {
+    typedBuffer = '';
+    const hourSeed = new Date().getHours() * 60 + new Date().getMinutes();
+    const advice = zoltarAdvice[hourSeed % zoltarAdvice.length];
+    showZoltarMessage(advice);
+  }
+});
+
+/* --- 3. CRYSTAL BALL CLICKS (13 → dimensión alternativa) --- */
+let crystalClicks = 0;
+let dimensionMode = false;
+
+document.getElementById('crystalBall').addEventListener('click', (e) => {
+  e.stopPropagation(); // Don't count for global clicks
+  crystalClicks++;
+
+  // Visual feedback on each click
+  const ball = document.getElementById('crystalBall');
+  ball.style.transform = `scale(${1 + crystalClicks * 0.03})`;
+
+  if (crystalClicks === 13 && !dimensionMode) {
+    dimensionMode = true;
+    document.body.classList.add('dimension-alternativa');
+    ball.style.transform = '';
+    showZoltarMessage(
+      '🌀 DIMENSIÓN ALTERNATIVA ACTIVADA 🌀\n\n' +
+      '13 clicks. El número MALDITO.\n' +
+      'Has cruzado al otro lado del espejo cósmico.\n' +
+      'Los colores se han invertido. La realidad es OTRA.\n' +
+      'Todo lo que leas aquí es verdad... en esta dimensión.\n\n' +
+      '(Haz otros 13 clicks para volver. Si es que quieres volver.)'
+    );
+  } else if (crystalClicks === 26 && dimensionMode) {
+    dimensionMode = false;
+    crystalClicks = 0;
+    document.body.classList.remove('dimension-alternativa');
+  }
+});
+
+/* --- 4. MOBILE SHAKE --- */
+let lastShakeTime = 0;
+const shakeMsgs = [
+  "¡¡HAS PERTURBADO MI NEBULOSA!! Ahora tengo que recalibrar 16 sistemas adivinatorios. GRACIAS por nada.",
+  "¿¡QUÉ HACES!? ¡Mis RUNAS se han caído al suelo! ¿Sabes lo difícil que es recoger runas en el ESPACIO?",
+  "ALERTA SÍSMICA CÓSMICA — mi Perlin noise se ha DESESTABILIZADO. Mercurio está FURIOSO contigo.",
+  "¡PARA! Cada vez que agitas el teléfono, un cometa cambia de órbita. ¿QUIERES ese karma?",
+  "Mi hexagrama del I Ching acaba de MUTAR de 'Paz' a 'Conmoción'. DEJA DE AGITAR.",
+  "El Ogham celta dice: los árboles no agitan sus ramas así. SÉ MÁS COMO UN ÁRBOL.",
+];
+
+if (window.DeviceMotionEvent) {
+  window.addEventListener('devicemotion', (e) => {
+    const acc = e.accelerationIncludingGravity;
+    if (!acc) return;
+    const force = Math.abs(acc.x || 0) + Math.abs(acc.y || 0) + Math.abs(acc.z || 0);
+    if (force > 30 && Date.now() - lastShakeTime > 3000) {
+      lastShakeTime = Date.now();
+      const msg = shakeMsgs[Math.floor(Math.random() * shakeMsgs.length)];
+      const el = document.getElementById('shake-message');
+      el.textContent = msg;
+      el.style.display = 'block';
+      setTimeout(() => { el.style.display = 'none'; }, 4000);
+    }
+  });
+}
+
+/* --- 5. CURSOR TRAIL (sparkle particles) --- */
+const trailEmojis = ['✨', '⭐', '💫', '🌟', '✨', '🔮'];
+document.addEventListener('mousemove', (e) => {
+  if (Math.random() > 0.25) return; // throttle
+  const particle = document.createElement('div');
+  particle.className = 'cursor-particle';
+  particle.textContent = trailEmojis[Math.floor(Math.random() * trailEmojis.length)];
+  particle.style.left = (e.pageX - 8) + 'px';
+  particle.style.top = (e.pageY - 8) + 'px';
+  document.body.appendChild(particle);
+  particle.addEventListener('animationend', () => particle.remove());
+});
+
+/* --- 6. FALLING PARTICLES --- */
+function spawnFallingParticle() {
+  const emojis = ['✨', '🔮', '⭐', '💫', '🌟', '🌙', '☄️'];
+  const p = document.createElement('div');
+  p.className = 'falling-particle';
+  p.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+  p.style.left = (Math.random() * 100) + 'vw';
+  p.style.animationDuration = (Math.random() * 6 + 6) + 's';
+  p.style.fontSize = (Math.random() * 14 + 8) + 'px';
+  document.body.appendChild(p);
+  p.addEventListener('animationend', () => p.remove());
+}
+setInterval(spawnFallingParticle, 1200);
+
+/* --- 7. CLIPPY CÓSMICO --- */
+const clippyTips = [
+  "Parece que estás consultando tu destino. ¿Necesitas ayuda? (No tengo manos pero tengo SABIDURÍA CÓSMICA.)",
+  "💡 Tip: Si lees todos los signos, técnicamente tienes 12 veces más suerte.",
+  "¿Sabías que? ZOLTAR-9000 procesa ruido de Perlin más rápido que tú procesas tus emociones.",
+  "🔮 Consejo: No tomes decisiones importantes hoy. Ni mañana. Consulta primero las runas.",
+  "¡Ey! El coeficiente de caos de esta página está subiendo. Probablemente sea culpa tuya.",
+  "Dato: Este horóscopo se genera con 16 sistemas adivinatorios. Tu terapeuta usa 0. Piénsalo.",
+  "⚠️ Mercurio podría estar retrógrado. O no. Pero por si acaso, no firmes nada.",
+  "¿Llevas rato aquí? Los astros dicen que tu jefe está sospechando.",
+  "💫 Fun fact: Las runas nórdicas se tallaron originalmente en mi fuselaje cósmico. Aún me pica la ᚦ.",
+  "ALERTA: Tu chakra raíz está bajo. Come algo con raíces. Zanahorias. Remolacha. Un ÁRBOL.",
+  "¡Hola de nuevo! ¿Me echabas de menos? No me importa, yo SIEMPRE estoy aquí. SIEMPRE.",
+  "¿Has probado a agitar el teléfono? No, no es un consejo. Es una ADVERTENCIA.",
+  "El Ifá Yoruba dice que Eshu está de buen humor hoy. APROVÉCHALO. Mañana quién sabe.",
+  "Oye, ¿y si en vez de leer horóscopos te hidratas? El agua es el Wu Xing más infravalorado.",
+];
+
+let clippyDismissed = false;
+let clippyReturnTimeout;
+
+function showClippy() {
+  const clippy = document.getElementById('clippy-cosmico');
+  const tip = clippyTips[Math.floor(Math.random() * clippyTips.length)];
+  document.getElementById('clippy-text').textContent = tip;
+  clippy.style.display = 'block';
+}
+
+function dismissClippy() {
+  document.getElementById('clippy-cosmico').style.display = 'none';
+  clippyDismissed = true;
+  clearTimeout(clippyReturnTimeout);
+  // It comes BACK. Always.
+  clippyReturnTimeout = setTimeout(() => {
+    clippyDismissed = false;
+    showClippy();
+  }, 35000);
+}
+
+// Show clippy after 12 seconds, rotate tips every 20s
+setTimeout(() => {
+  showClippy();
+  setInterval(() => {
+    if (!clippyDismissed) showClippy();
+  }, 20000);
+}, 12000);
+
+/* --- 8. FAKE WIN98 POPUP --- */
+function closeWin98Popup(accepted) {
+  document.getElementById('win98-popup').style.display = 'none';
+  if (accepted) {
+    showZoltarMessage(
+      'Has aceptado los riesgos de Mercurio retrógrado.\n\n' +
+      'ZOLTAR-9000 se lava las manos cósmicas.\n' +
+      'Si algo sale mal, no es culpa de los astros.\n' +
+      'Bueno, sí lo es. Pero TAMBIÉN es culpa tuya.\n\n' +
+      'Adelante, mortal. El cosmos te observa.'
+    );
+  }
+}
+
+// Show popup after 50 seconds
+setTimeout(() => {
+  document.getElementById('win98-popup').style.display = 'block';
+}, 50000);
+
+/* --- 9. GLOBAL CLICK COUNTER --- */
+let globalClicks = 0;
+const clickMessages = [
+  (n) => `Has hecho ${n} clicks. Los astros están tomando nota. 📝`,
+  (n) => `${n} clicks. Cada uno resuena en la nebulosa de Cangrejo. 🦀`,
+  (n) => `Click nº ${n}. Las runas preguntan: ¿PARA QUÉ? ᚱ`,
+  (n) => `${n} perturbaciones registradas. Mi Perlin noise está SUFRIENDO. 📊`,
+  (n) => `${n} clicks y contando. El I Ching ha emitido una orden de ALEJAMIENTO. ☯️`,
+  (n) => `${n}. Tu chakra del click está SOBREACTIVADO. Respira. 🧘`,
+  (n) => `${n} clicks. Orunmila me acaba de preguntar si estás BIEN. 🥁`,
+];
+
+document.addEventListener('click', () => {
+  globalClicks++;
+  if (globalClicks % 10 === 0) {
+    const counter = document.getElementById('click-counter');
+    const msgFn = clickMessages[Math.floor(Math.random() * clickMessages.length)];
+    counter.textContent = msgFn(globalClicks);
+    counter.style.display = 'block';
+    setTimeout(() => { counter.style.display = 'none'; }, 4000);
+  }
+});
+
+/* --- 10. HORA MALDITA (3:33 AM) --- */
+function checkHoraMaldita() {
+  const now = new Date();
+  const isMaldita = now.getHours() === 3 && now.getMinutes() === 33;
+
+  if (isMaldita && !document.body.classList.contains('hora-maldita')) {
+    document.body.classList.add('hora-maldita');
+    showZoltarMessage(
+      '⏰ 3:33 AM — LA HORA MALDITA ⏰\n\n' +
+      'Has accedido al horóscopo a la hora PROHIBIDA.\n' +
+      'La página ha cruzado al plano sombra.\n' +
+      'Los horóscopos que leas ahora tienen el TRIPLE de potencia.\n' +
+      'Y el triple de consecuencias.\n\n' +
+      'ZOLTAR-9000 te recomienda irte a dormir.\n' +
+      'Pero los dos sabemos que no lo vas a hacer.'
+    );
+  } else if (!isMaldita) {
+    document.body.classList.remove('hora-maldita');
+  }
+}
+checkHoraMaldita();
+setInterval(checkHoraMaldita, 30000);
+
+/* --- 11. "NO PULSAR" BUTTON --- */
+function noPulsar() {
+  const msgs = [
+    '⚠️ ¡TE DIJE QUE NO PULSARAS!',
+    '😤 Los astros están DECEPCIONADOS contigo.',
+    '💀 Has roto el sello cósmico. Ya no hay vuelta atrás.',
+    '☿️ Mercurio acaba de entrar en retrógrado POR TU CULPA.',
+    '🔮 ZOLTAR-9000 está recalculando tu destino... no pinta bien.',
+    '😡 ¿Por qué? ¿POR QUÉ? ¡Tenías UNA instrucción!',
+    '📜 Tu horóscopo para mañana ha sido ANULADO.',
+    '🌀 Cerrando portal dimensional...\nERROR 666: PORTAL ABIERTO PERMANENTEMENTE.',
+    '👁️ Esto es culpa tuya. Todo lo que pase a partir de ahora ES CULPA TUYA.',
+    '⚰️ VEREDICTO FINAL: Los astros han votado.\nEstás en su lista negra.\n\nQue tengas buen día. 🔮',
+  ];
+  let i = 0;
+  function nextAlert() {
+    if (i >= msgs.length) return;
+    alert(msgs[i]);
+    i++;
+    setTimeout(nextAlert, 50);
+  }
+  nextAlert();
+}
 </script>
 </body>
 </html>
