@@ -50,10 +50,15 @@ def main():
         r = _run(f"{PY} export_json.py", timeout=60)
         step.detail = r.stdout.strip() if r.stdout else "done"
 
-    with report.step("deploy_ghpages") as step:
-        deploy_script = os.path.join(os.path.dirname(__file__), "..", "deploy_ghpages.sh")
-        r = _run(f'bash "{deploy_script}" docs "Update horoscopo del dia"', timeout=600)
-        step.detail = r.stdout.strip().split("\n")[-1] if r.stdout else "deployed"
+    with report.step("push_site") as step:
+        _run('git add docs/data/horoscopo.json', timeout=30)
+        r = _run('git diff --cached --quiet', check=False, timeout=10)
+        if r.returncode != 0:
+            _run('git commit -m "Update horoscopo data"', timeout=30)
+            _run('git push origin main', timeout=120)
+            step.detail = "pushed"
+        else:
+            step.detail = "no changes"
 
     report.finish()
 
