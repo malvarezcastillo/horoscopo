@@ -193,24 +193,6 @@ body::after {
   font-size: 12px;
 }
 
-.stats-bar {
-  background: linear-gradient(180deg, #330066, #000033);
-  border: 3px ridge #9933ff;
-  padding: 10px;
-  margin: 10px 20px;
-  text-align: center;
-  font-size: 14px;
-  color: #00ffff;
-}
-
-.stats-bar .stat {
-  display: inline-block;
-  margin: 5px 15px;
-  padding: 5px 10px;
-  border: 1px solid #00ffff;
-  background: rgba(0, 255, 255, 0.05);
-}
-
 .date-display {
   font-family: 'Press Start 2P', monospace;
   font-size: clamp(10px, 2.5vw, 16px);
@@ -596,11 +578,6 @@ body.hora-maldita .marquee-bar {
   background: linear-gradient(90deg, #ff0000, #660000, #ff0000) !important;
 }
 
-body.hora-maldita .stats-bar {
-  border-color: #660000 !important;
-  color: #ff3333 !important;
-}
-
 body.hora-maldita .crystal-ball {
   filter: drop-shadow(0 0 20px #ff0000) hue-rotate(180deg) !important;
 }
@@ -901,7 +878,6 @@ body.hora-maldita .crystal-ball {
 /* Responsive */
 @media (max-width: 600px) {
   .noise-panel { grid-template-columns: 1fr; }
-  .stats-bar .stat { display: block; margin: 5px auto; }
   #clippy-cosmico { max-width: 220px; right: 10px; bottom: 10px; }
 }
 </style>
@@ -944,11 +920,6 @@ body.hora-maldita .crystal-ball {
 <!-- DATE + STATS -->
 <div class="date-display" id="dateDisplay">CARGANDO FECHA COSMICA...</div>
 
-<div class="stats-bar" id="statsBar">
-  <div class="stat">📡 Fuentes: <span id="sourceCount">--</span></div>
-  <div class="stat">🌐 Idiomas: <span id="langCount">--</span></div>
-  <div class="stat" id="moonStat">🌙 Luna: --</div>
-</div>
 
 <!-- ZODIAC NAV -->
 <nav class="zodiac-nav" id="zodiacNav"></nav>
@@ -1194,14 +1165,6 @@ async function loadData() {
     const monthName = MONTH_NAMES[d.getMonth() + 1];
     document.getElementById('dateDisplay').innerHTML =
       `&#x2728; ${dayName} ${d.getDate()} de ${monthName} ${d.getFullYear()} &#x2728;`;
-
-    // Stats
-    document.getElementById('sourceCount').textContent = data.source_count;
-    document.getElementById('langCount').textContent = data.lang_count;
-    if (data.signs.length > 0 && data.signs[0].moon_phase) {
-      document.getElementById('moonStat').innerHTML =
-        `${data.signs[0].moon_phase.split(' ')[0]} Luna: ${data.signs[0].moon_phase}`;
-    }
 
     // Zodiac nav
     const nav = document.getElementById('zodiacNav');
