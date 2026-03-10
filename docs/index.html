@@ -1452,12 +1452,10 @@ function closeWin98Popup(accepted) {
   }
 }
 
-// Show popup after 50s — but only once per day
+// Show popup after 50s — but only once ever
 setTimeout(() => {
   try {
-    const last = parseInt(localStorage.getItem('mercury_warned') || '0');
-    const oneDay = 24 * 60 * 60 * 1000;
-    if (Date.now() - last < oneDay) return;
+    if (localStorage.getItem('mercury_warned')) return;
   } catch(e) {}
   document.getElementById('win98-popup').style.display = 'block';
 }, 50000);
