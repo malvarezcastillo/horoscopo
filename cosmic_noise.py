@@ -29,198 +29,198 @@ EMOJI_POOLS = {
     "cosmic_junk": list("🛒🧻🪣🧲📎🗿🪨🧊🫠🤌🦷👀🦴🧬"),
 }
 
-# Tarot Major Arcana
+# Arcanos Mayores del Tarot
 TAROT_MAJOR = [
-    "The Fool", "The Magician", "The High Priestess", "The Empress", "The Emperor",
-    "The Hierophant", "The Lovers", "The Chariot", "Strength", "The Hermit",
-    "Wheel of Fortune", "Justice", "The Hanged Man", "Death", "Temperance",
-    "The Devil", "The Tower", "The Star", "The Moon", "The Sun",
-    "Judgement", "The World",
+    "El Loco", "El Mago", "La Sacerdotisa", "La Emperatriz", "El Emperador",
+    "El Sumo Sacerdote", "Los Enamorados", "El Carro", "La Fuerza", "El Ermitaño",
+    "La Rueda de la Fortuna", "La Justicia", "El Colgado", "La Muerte", "La Templanza",
+    "El Diablo", "La Torre", "La Estrella", "La Luna", "El Sol",
+    "El Juicio", "El Mundo",
 ]
 
 TAROT_EMOJIS = {
-    "The Fool": "🃏", "The Magician": "🪄", "The High Priestess": "🌙",
-    "The Empress": "👑", "The Emperor": "⚔️", "The Hierophant": "📿",
-    "The Lovers": "💕", "The Chariot": "🏇", "Strength": "🦁",
-    "The Hermit": "🏔️", "Wheel of Fortune": "🎡", "Justice": "⚖️",
-    "The Hanged Man": "🙃", "Death": "💀", "Temperance": "🏺",
-    "The Devil": "😈", "The Tower": "🗼", "The Star": "⭐",
-    "The Moon": "🌕", "The Sun": "🌞", "Judgement": "📯", "The World": "🌍",
+    "El Loco": "🃏", "El Mago": "🪄", "La Sacerdotisa": "🌙",
+    "La Emperatriz": "👑", "El Emperador": "⚔️", "El Sumo Sacerdote": "📿",
+    "Los Enamorados": "💕", "El Carro": "🏇", "La Fuerza": "🦁",
+    "El Ermitaño": "🏔️", "La Rueda de la Fortuna": "🎡", "La Justicia": "⚖️",
+    "El Colgado": "🙃", "La Muerte": "💀", "La Templanza": "🏺",
+    "El Diablo": "😈", "La Torre": "🗼", "La Estrella": "⭐",
+    "La Luna": "🌕", "El Sol": "🌞", "El Juicio": "📯", "El Mundo": "🌍",
 }
 
-# I Ching trigrams
+# Trigramas del I Ching
 TRIGRAMS = ["☰", "☱", "☲", "☳", "☴", "☵", "☶", "☷"]
 TRIGRAM_NAMES = {
-    "☰": "Heaven (Qian)", "☱": "Lake (Dui)", "☲": "Fire (Li)", "☳": "Thunder (Zhen)",
-    "☴": "Wind (Xun)", "☵": "Water (Kan)", "☶": "Mountain (Gen)", "☷": "Earth (Kun)",
+    "☰": "Cielo (Qián)", "☱": "Lago (Duì)", "☲": "Fuego (Lí)", "☳": "Trueno (Zhèn)",
+    "☴": "Viento (Xùn)", "☵": "Agua (Kǎn)", "☶": "Montaña (Gèn)", "☷": "Tierra (Kūn)",
 }
 
-ELEMENTS = ["🔥 Fire", "🌊 Water", "🌍 Earth", "🌬️ Air", "⚡ Aether"]
+ELEMENTS = ["🔥 Fuego", "🌊 Agua", "🌍 Tierra", "🌬️ Aire", "⚡ Éter"]
 COLORS = [
-    "🔴 Crimson", "🟠 Amber", "🟡 Gold", "🟢 Emerald", "🔵 Sapphire",
-    "🟣 Violet", "⚫ Obsidian", "⚪ Pearl", "🟤 Bronze", "🩷 Rose",
+    "🔴 Carmesí", "🟠 Ámbar", "🟡 Oro", "🟢 Esmeralda", "🔵 Zafiro",
+    "🟣 Violeta", "⚫ Obsidiana", "⚪ Perla", "🟤 Bronce", "🩷 Rosa",
 ]
 
-# Elder Futhark Runes (Norse)
+# Runas Elder Futhark (nórdicas)
 RUNES = [
-    ("ᚠ", "Fehu", "Wealth, abundance, cattle — the primal fire of ownership"),
-    ("ᚢ", "Uruz", "Strength, wild ox — untamed power and health"),
-    ("ᚦ", "Thurisaz", "Thorn, giant — reactive force, chaos that protects"),
-    ("ᚨ", "Ansuz", "Odin's rune — divine breath, prophecy, the word"),
-    ("ᚱ", "Raidho", "Journey, wagon — cosmic order in motion"),
-    ("ᚲ", "Kenaz", "Torch, ulcer — illumination through pain"),
-    ("ᚷ", "Gebo", "Gift — sacred exchange, the bond that cannot be broken"),
-    ("ᚹ", "Wunjo", "Joy — harmony achieved, the clan-fire that warms"),
-    ("ᚺ", "Hagalaz", "Hail — uncontrollable destruction that clears the way"),
-    ("ᚾ", "Nauthiz", "Need-fire — constraint that teaches, resistance that strengthens"),
-    ("ᛁ", "Isa", "Ice — standstill, the frozen moment before the thaw"),
-    ("ᛃ", "Jera", "Year, harvest — patience rewarded, the wheel turns"),
-    ("ᛇ", "Eihwaz", "Yew — the world-tree axis, death and endurance"),
-    ("ᛈ", "Perthro", "Dice cup, fate — the unknowable, wyrd's laughter"),
-    ("ᛉ", "Algiz", "Elk-sedge — protection, the hand reaching upward"),
-    ("ᛊ", "Sowilo", "Sun — victory, wholeness, the lightning bolt of clarity"),
-    ("ᛏ", "Tiwaz", "Tyr — sacrifice, justice, the one-handed god's oath"),
-    ("ᛒ", "Berkano", "Birch — rebirth, the mother, secrets kept in earth"),
-    ("ᛖ", "Ehwaz", "Horse — partnership, trust, the bond between rider and steed"),
-    ("ᛗ", "Mannaz", "Human — the self, intelligence, what makes us mortal"),
-    ("ᛚ", "Laguz", "Water, lake — the unconscious, flow, what lies beneath"),
-    ("ᛜ", "Ingwaz", "Ing — gestation, internal growth, the seed in darkness"),
-    ("ᛞ", "Dagaz", "Day — breakthrough, dawn, the moment everything changes"),
-    ("ᛟ", "Othala", "Heritage — ancestral land, what was left for you"),
+    ("ᚠ", "Fehu", "Riqueza, abundancia, ganado — el fuego primordial de la posesión"),
+    ("ᚢ", "Uruz", "Fuerza, uro salvaje — poder indómito y salud"),
+    ("ᚦ", "Thurisaz", "Espina, gigante — fuerza reactiva, caos que protege"),
+    ("ᚨ", "Ansuz", "Runa de Odín — aliento divino, profecía, la palabra"),
+    ("ᚱ", "Raidho", "Viaje, carro — orden cósmico en movimiento"),
+    ("ᚲ", "Kenaz", "Antorcha, llaga — iluminación a través del dolor"),
+    ("ᚷ", "Gebo", "Regalo — intercambio sagrado, el vínculo inquebrantable"),
+    ("ᚹ", "Wunjo", "Alegría — armonía alcanzada, el fuego del clan que calienta"),
+    ("ᚺ", "Hagalaz", "Granizo — destrucción incontrolable que despeja el camino"),
+    ("ᚾ", "Nauthiz", "Fuego de necesidad — restricción que enseña, resistencia que fortalece"),
+    ("ᛁ", "Isa", "Hielo — quietud, el momento congelado antes del deshielo"),
+    ("ᛃ", "Jera", "Año, cosecha — paciencia recompensada, la rueda gira"),
+    ("ᛇ", "Eihwaz", "Tejo — el eje del árbol-mundo, muerte y resistencia"),
+    ("ᛈ", "Perthro", "Cubilete del dado, destino — lo incognoscible, la risa del wyrd"),
+    ("ᛉ", "Algiz", "Juncia de alce — protección, la mano que se alza"),
+    ("ᛊ", "Sowilo", "Sol — victoria, plenitud, el rayo de claridad"),
+    ("ᛏ", "Tiwaz", "Tyr — sacrificio, justicia, el juramento del dios manco"),
+    ("ᛒ", "Berkano", "Abedul — renacimiento, la madre, secretos guardados en tierra"),
+    ("ᛖ", "Ehwaz", "Caballo — compañerismo, confianza, el vínculo entre jinete y corcel"),
+    ("ᛗ", "Mannaz", "Humano — el yo, inteligencia, lo que nos hace mortales"),
+    ("ᛚ", "Laguz", "Agua, lago — el inconsciente, fluir, lo que yace debajo"),
+    ("ᛜ", "Ingwaz", "Ing — gestación, crecimiento interno, la semilla en la oscuridad"),
+    ("ᛞ", "Dagaz", "Día — ruptura, amanecer, el momento en que todo cambia"),
+    ("ᛟ", "Othala", "Herencia — tierra ancestral, lo que te fue legado"),
 ]
 
-# Vedic Nakshatras (27 lunar mansions)
+# Nakshatras védicos (27 mansiones lunares)
 NAKSHATRAS = [
-    ("Ashwini", "अश्विनी", "The Horse Riders — swift healing, new beginnings"),
-    ("Bharani", "भरणी", "The Bearer — transformation through intensity"),
-    ("Krittika", "कृत्तिका", "The Razor — purification by fire, cutting away"),
-    ("Rohini", "रोहिणी", "The Red One — fertility, growth, desire fulfilled"),
-    ("Mrigashira", "मृगशिरा", "The Deer's Head — searching, wandering, gentle curiosity"),
-    ("Ardra", "आर्द्रा", "The Moist One — storms that clear, tears that cleanse"),
-    ("Punarvasu", "पुनर्वसु", "Return of the Light — renewal, the arrow that comes back"),
-    ("Pushya", "पुष्य", "The Nourisher — most auspicious, spiritual milk"),
-    ("Ashlesha", "आश्लेषा", "The Serpent — coiled wisdom, hypnotic embrace"),
-    ("Magha", "मघा", "The Mighty — ancestors speak, throne of lineage"),
-    ("Purva Phalguni", "पूर्वफाल्गुनी", "The Former Red One — pleasure, creation, the wedding bed"),
-    ("Uttara Phalguni", "उत्तरफाल्गुनी", "The Latter Red One — patronage, contracts, the morning after"),
-    ("Hasta", "हस्त", "The Hand — skill, craft, what the fingers know"),
-    ("Chitra", "चित्रा", "The Brilliant — jewel of the sky, cosmic architecture"),
-    ("Swati", "स्वाती", "The Sword — independence, the wind that bends but doesn't break"),
-    ("Vishakha", "विशाखा", "The Forked Branch — determination, the archer's focus"),
-    ("Anuradha", "अनुराधा", "Following Radha — devotion, friendship, the lotus in mud"),
-    ("Jyeshtha", "ज्येष्ठा", "The Eldest — protective power, the chief's burden"),
-    ("Mula", "मूला", "The Root — uprooting, getting to the bottom, Kali's laughter"),
-    ("Purva Ashadha", "पूर्वाषाढ़ा", "The Former Invincible — purification, early victory"),
-    ("Uttara Ashadha", "उत्तराषाढ़ा", "The Latter Invincible — final victory, universal"),
-    ("Shravana", "श्रवण", "The Ear — listening, learning, what the cosmos whispers"),
-    ("Dhanishta", "धनिष्ठा", "The Drum — rhythm, wealth, music of the spheres"),
-    ("Shatabhisha", "शतभिषा", "Hundred Healers — the veiling star, oceanic medicine"),
-    ("Purva Bhadrapada", "पूर्वभाद्रपदा", "The Former Lucky Feet — scorching intensity, funeral pyre"),
-    ("Uttara Bhadrapada", "उत्तरभाद्रपदा", "The Latter Lucky Feet — deep waters, kundalini depths"),
-    ("Revati", "रेवती", "The Wealthy — safe journey, the final nakshatra, cosmic completion"),
+    ("Ashwini", "अश्विनी", "Los Jinetes — sanación veloz, nuevos comienzos"),
+    ("Bharani", "भरणी", "La Portadora — transformación a través de la intensidad"),
+    ("Krittika", "कृत्तिका", "La Navaja — purificación por fuego, cortar lo que sobra"),
+    ("Rohini", "रोहिणी", "La Roja — fertilidad, crecimiento, deseo cumplido"),
+    ("Mrigashira", "मृगशिरा", "Cabeza de Ciervo — búsqueda, errancia, curiosidad suave"),
+    ("Ardra", "आर्द्रा", "La Húmeda — tormentas que despejan, lágrimas que limpian"),
+    ("Punarvasu", "पुनर्वसु", "Retorno de la Luz — renovación, la flecha que regresa"),
+    ("Pushya", "पुष्य", "La Nodriza — lo más auspicioso, leche espiritual"),
+    ("Ashlesha", "आश्लेषा", "La Serpiente — sabiduría enroscada, abrazo hipnótico"),
+    ("Magha", "मघा", "La Poderosa — los ancestros hablan, trono del linaje"),
+    ("Purva Phalguni", "पूर्वफाल्गुनी", "La Primera Roja — placer, creación, el lecho nupcial"),
+    ("Uttara Phalguni", "उत्तरफाल्गुनी", "La Segunda Roja — mecenazgo, contratos, la mañana siguiente"),
+    ("Hasta", "हस्त", "La Mano — habilidad, artesanía, lo que los dedos saben"),
+    ("Chitra", "चित्रा", "La Brillante — joya del cielo, arquitectura cósmica"),
+    ("Swati", "स्वाती", "La Espada — independencia, el viento que dobla sin romper"),
+    ("Vishakha", "विशाखा", "La Rama Bifurcada — determinación, la mira del arquero"),
+    ("Anuradha", "अनुराधा", "Siguiendo a Radha — devoción, amistad, el loto en el barro"),
+    ("Jyeshtha", "ज्येष्ठा", "La Mayor — poder protector, la carga del jefe"),
+    ("Mula", "मूला", "La Raíz — arrancar de raíz, llegar al fondo, la risa de Kali"),
+    ("Purva Ashadha", "पूर्वाषाढ़ा", "La Primera Invencible — purificación, victoria temprana"),
+    ("Uttara Ashadha", "उत्तराषाढ़ा", "La Segunda Invencible — victoria final, universal"),
+    ("Shravana", "श्रवण", "El Oído — escuchar, aprender, lo que el cosmos susurra"),
+    ("Dhanishta", "धनिष्ठा", "El Tambor — ritmo, riqueza, música de las esferas"),
+    ("Shatabhisha", "शतभिषा", "Cien Sanadores — la estrella que vela, medicina oceánica"),
+    ("Purva Bhadrapada", "पूर्वभाद्रपदा", "Los Primeros Pies Afortunados — intensidad abrasadora, pira funeraria"),
+    ("Uttara Bhadrapada", "उत्तरभाद्रपदा", "Los Segundos Pies Afortunados — aguas profundas, abismos de kundalini"),
+    ("Revati", "रेवती", "La Próspera — viaje seguro, el último nakshatra, culminación cósmica"),
 ]
 
-# Mayan Tzolkin day signs (20 day signs)
+# Signos del Tzolkin maya (20 signos diarios)
 TZOLKIN_SIGNS = [
-    ("Imix", "🐊", "Crocodile — primordial waters, the Earth Mother's back"),
-    ("Ik", "💨", "Wind — breath of life, spirit, communication with the divine"),
-    ("Akbal", "🌑", "Night — the void, the dreaming house, inner darkness"),
-    ("Kan", "🌽", "Seed — potential, the net of abundance, lizard medicine"),
-    ("Chicchan", "🐍", "Serpent — kundalini, life force, feathered wisdom"),
-    ("Cimi", "💀", "Death — transformation, the owl's counsel, ancestors"),
-    ("Manik", "🦌", "Deer — healing hand, the hunt, tools of creation"),
-    ("Lamat", "⭐", "Star — Venus, harmony, the rabbit's multiplication"),
-    ("Muluc", "💧", "Water — offering, the moon's pull, emotional tides"),
-    ("Oc", "🐕", "Dog — loyalty, guides to the underworld, faithful heart"),
-    ("Chuen", "🐒", "Monkey — artisan, trickster, the thread-spinner of time"),
-    ("Eb", "🌿", "Grass — road, human journey, the path of many steps"),
-    ("Ben", "🌾", "Reed — authority, skywalker, the hollow bone that channels"),
-    ("Ix", "🐆", "Jaguar — night sorcerer, earth magic, shamanic vision"),
-    ("Men", "🦅", "Eagle — vision from above, the mind that soars"),
-    ("Cib", "🕯️", "Vulture — ancestral wisdom, karmic cleansing, old soul"),
-    ("Caban", "🌍", "Earth — synchronicity, earthquakes of understanding"),
-    ("Etznab", "🔪", "Flint — truth that cuts, mirror of obsidian, sacrifice"),
-    ("Cauac", "⛈️", "Storm — thunder beings, purification, cosmic rage"),
-    ("Ahau", "☀️", "Sun — enlightenment, the lord, flowers of consciousness"),
+    ("Imix", "🐊", "Cocodrilo — aguas primordiales, la espalda de la Madre Tierra"),
+    ("Ik", "💨", "Viento — aliento de vida, espíritu, comunicación con lo divino"),
+    ("Akbal", "🌑", "Noche — el vacío, la casa del sueño, oscuridad interior"),
+    ("Kan", "🌽", "Semilla — potencial, la red de abundancia, medicina de lagarto"),
+    ("Chicchan", "🐍", "Serpiente — kundalini, fuerza vital, sabiduría emplumada"),
+    ("Cimi", "💀", "Muerte — transformación, el consejo del búho, ancestros"),
+    ("Manik", "🦌", "Ciervo — mano sanadora, la cacería, herramientas de creación"),
+    ("Lamat", "⭐", "Estrella — Venus, armonía, la multiplicación del conejo"),
+    ("Muluc", "💧", "Agua — ofrenda, el tirón de la luna, mareas emocionales"),
+    ("Oc", "🐕", "Perro — lealtad, guía al inframundo, corazón fiel"),
+    ("Chuen", "🐒", "Mono — artesano, embaucador, el hilandero del tiempo"),
+    ("Eb", "🌿", "Hierba — camino, viaje humano, la senda de muchos pasos"),
+    ("Ben", "🌾", "Caña — autoridad, caminante del cielo, el hueso hueco que canaliza"),
+    ("Ix", "🐆", "Jaguar — hechicero nocturno, magia terrestre, visión chamánica"),
+    ("Men", "🦅", "Águila — visión desde lo alto, la mente que vuela"),
+    ("Cib", "🕯️", "Buitre — sabiduría ancestral, limpieza kármica, alma vieja"),
+    ("Caban", "🌍", "Tierra — sincronicidad, terremotos de comprensión"),
+    ("Etznab", "🔪", "Pedernal — verdad que corta, espejo de obsidiana, sacrificio"),
+    ("Cauac", "⛈️", "Tormenta — seres del trueno, purificación, furia cósmica"),
+    ("Ahau", "☀️", "Sol — iluminación, el señor, flores de consciencia"),
 ]
 
-# Yoruba Ifá Odù (16 principal figures)
+# Odù del Ifá Yoruba (16 figuras principales)
 IFA_ODU = [
-    ("Ogbe", "𐌉𐌉𐌉𐌉", "The king of light — pure blessing, open roads, heaven descends"),
-    ("Oyeku", "𐌗𐌗𐌗𐌗", "The king of darkness — endings, ancestors, what hides to protect"),
-    ("Iwori", "𐌉𐌗𐌗𐌉", "The chameleon — adaptability, reversal, inner vision"),
-    ("Odi", "𐌗𐌉𐌉𐌗", "The closed door — boundaries, gestation, the womb"),
-    ("Irosun", "𐌉𐌉𐌗𐌗", "The blood of sacrifice — lineage, DNA memory, ancestral debt"),
-    ("Owonrin", "𐌗𐌗𐌉𐌉", "The trickster's laugh — chaos magic, Eshu's crossroads"),
-    ("Obara", "𐌉𐌗𐌗𐌗", "The kneeling one — humility opens what force cannot"),
-    ("Okanran", "𐌗𐌗𐌗𐌉", "The one mouth — truth spoken at cost, the heart's fire"),
-    ("Ogunda", "𐌉𐌉𐌉𐌗", "The path cleared by iron — Ogun's road, war that creates"),
-    ("Osa", "𐌗𐌉𐌉𐌉", "The wind's errand — Oya's tornado, sudden change"),
-    ("Ika", "𐌗𐌗𐌉𐌗", "The biting one — cunning, medicine that stings to heal"),
-    ("Oturupon", "𐌗𐌉𐌗𐌗", "The overturned — illness as teacher, the earth reclaims"),
-    ("Otura", "𐌉𐌗𐌉𐌗", "The mystic — Ifa's own voice, divination squared"),
-    ("Irete", "𐌗𐌉𐌗𐌉", "The presser — persistence, the tortoise's victory"),
-    ("Ose", "𐌉𐌗𐌉𐌉", "The sorcerer — Oshun's honey, sweetness with power"),
-    ("Ofun", "𐌉𐌉𐌗𐌉", "The white cloth — original purity, return to source"),
+    ("Ogbe", "𐌉𐌉𐌉𐌉", "El rey de la luz — bendición pura, caminos abiertos, el cielo desciende"),
+    ("Oyeku", "𐌗𐌗𐌗𐌗", "El rey de la oscuridad — finales, ancestros, lo que se oculta para proteger"),
+    ("Iwori", "𐌉𐌗𐌗𐌉", "El camaleón — adaptabilidad, inversión, visión interior"),
+    ("Odi", "𐌗𐌉𐌉𐌗", "La puerta cerrada — límites, gestación, el vientre"),
+    ("Irosun", "𐌉𐌉𐌗𐌗", "La sangre del sacrificio — linaje, memoria del ADN, deuda ancestral"),
+    ("Owonrin", "𐌗𐌗𐌉𐌉", "La risa del embaucador — magia del caos, la encrucijada de Eshu"),
+    ("Obara", "𐌉𐌗𐌗𐌗", "El que se arrodilla — la humildad abre lo que la fuerza no puede"),
+    ("Okanran", "𐌗𐌗𐌗𐌉", "La boca única — verdad dicha a precio, el fuego del corazón"),
+    ("Ogunda", "𐌉𐌉𐌉𐌗", "El camino despejado con hierro — la ruta de Ogún, guerra que crea"),
+    ("Osa", "𐌗𐌉𐌉𐌉", "El recado del viento — el tornado de Oyá, cambio repentino"),
+    ("Ika", "𐌗𐌗𐌉𐌗", "El que muerde — astucia, medicina que pica para sanar"),
+    ("Oturupon", "𐌗𐌉𐌗𐌗", "El volcado — la enfermedad como maestra, la tierra reclama"),
+    ("Otura", "𐌉𐌗𐌉𐌗", "El místico — la voz propia del Ifá, adivinación al cuadrado"),
+    ("Irete", "𐌗𐌉𐌗𐌉", "El que presiona — persistencia, la victoria de la tortuga"),
+    ("Ose", "𐌉𐌗𐌉𐌉", "El hechicero — la miel de Oshún, dulzura con poder"),
+    ("Ofun", "𐌉𐌉𐌗𐌉", "El paño blanco — pureza original, retorno a la fuente"),
 ]
 
-# Celtic Ogham (tree alphabet divination)
+# Ogham celta (alfabeto arbóreo de adivinación)
 OGHAM = [
-    ("ᚁ", "Beith", "Birch — new beginnings, purification, the first mark"),
-    ("ᚂ", "Luis", "Rowan — protection against enchantment, clear vision"),
-    ("ᚃ", "Fearn", "Alder — oracular power, the bridge between worlds"),
-    ("ᚄ", "Saille", "Willow — moon tree, intuition, the water's memory"),
-    ("ᚅ", "Nion", "Ash — Yggdrasil's cousin, connection, the cosmic web"),
-    ("ᚆ", "Huath", "Hawthorn — gateway, patience, the fairy thorn"),
-    ("ᚇ", "Duir", "Oak — doorway, strength, the druids' own tree"),
-    ("ᚈ", "Tinne", "Holly — challenge, warrior energy, the spear that tests"),
-    ("ᚉ", "Coll", "Hazel — wisdom, the salmon's pool, nine nuts of knowledge"),
-    ("ᚊ", "Quert", "Apple — beauty, immortality, Avalon's gift"),
-    ("ᚋ", "Muin", "Vine — harvest, prophecy, Dionysian truth"),
-    ("ᚌ", "Gort", "Ivy — tenacity, the labyrinth, spiral growth"),
-    ("ᚍ", "Ngetal", "Reed — direct action, thatch of the spirit-house"),
-    ("ᚎ", "Straif", "Blackthorn — no choice, fate, the dark mother's discipline"),
-    ("ᚏ", "Ruis", "Elder — endings, the crone, death that feeds new life"),
+    ("ᚁ", "Beith", "Abedul — nuevos comienzos, purificación, la primera marca"),
+    ("ᚂ", "Luis", "Serbal — protección contra el encantamiento, visión clara"),
+    ("ᚃ", "Fearn", "Aliso — poder oracular, el puente entre mundos"),
+    ("ᚄ", "Saille", "Sauce — árbol lunar, intuición, la memoria del agua"),
+    ("ᚅ", "Nion", "Fresno — primo de Yggdrasil, conexión, la telaraña cósmica"),
+    ("ᚆ", "Huath", "Espino — portal, paciencia, el espino de las hadas"),
+    ("ᚇ", "Duir", "Roble — umbral, fuerza, el árbol de los druidas"),
+    ("ᚈ", "Tinne", "Acebo — desafío, energía guerrera, la lanza que prueba"),
+    ("ᚉ", "Coll", "Avellano — sabiduría, la poza del salmón, nueve nueces del saber"),
+    ("ᚊ", "Quert", "Manzano — belleza, inmortalidad, el don de Avalón"),
+    ("ᚋ", "Muin", "Vid — cosecha, profecía, verdad dionisíaca"),
+    ("ᚌ", "Gort", "Hiedra — tenacidad, el laberinto, crecimiento en espiral"),
+    ("ᚍ", "Ngetal", "Caña — acción directa, techo de la casa-espíritu"),
+    ("ᚎ", "Straif", "Endrino — sin elección, destino, la disciplina de la madre oscura"),
+    ("ᚏ", "Ruis", "Saúco — finales, la anciana, muerte que alimenta nueva vida"),
 ]
 
-# Arabic Geomancy (Raml) — 16 figures
+# Geomancia árabe (Raml) — 16 figuras
 GEOMANCY = [
-    ("⚊⚊\n⚊⚊\n⚊⚊\n⚊⚊", "Via", "The Way — pure movement, the path itself is the answer"),
-    ("⚋⚋\n⚋⚋\n⚋⚋\n⚋⚋", "Populus", "The People — collective, dissolution, the crowd decides"),
-    ("⚊⚊\n⚋⚋\n⚋⚋\n⚊⚊", "Carcer", "The Prison — restriction that reveals, necessary confinement"),
-    ("⚋⚋\n⚊⚊\n⚊⚊\n⚋⚋", "Conjunctio", "The Meeting — union of opposites, crossroads"),
-    ("⚊⚊\n⚊⚊\n⚋⚋\n⚋⚋", "Fortuna Major", "Great Fortune — overwhelming success, the sun ascends"),
-    ("⚋⚋\n⚋⚋\n⚊⚊\n⚊⚊", "Fortuna Minor", "Lesser Fortune — fleeting luck, grab it NOW"),
-    ("⚊⚊\n⚋⚋\n⚊⚊\n⚋⚋", "Acquisitio", "The Gain — accumulation, what enters does not leave"),
-    ("⚋⚋\n⚊⚊\n⚋⚋\n⚊⚊", "Amissio", "The Loss — release, what leaves was never truly yours"),
-    ("⚊⚊\n⚊⚊\n⚊⚊\n⚋⚋", "Laetitia", "Joy — upward, the fountain, laughter of the earth"),
-    ("⚋⚋\n⚊⚊\n⚊⚊\n⚊⚊", "Tristitia", "Sorrow — downward, the well, grief that deepens"),
-    ("⚊⚊\n⚋⚋\n⚋⚋\n⚋⚋", "Caput Draconis", "Dragon's Head — beginnings, the portal opens upward"),
-    ("⚋⚋\n⚋⚋\n⚋⚋\n⚊⚊", "Cauda Draconis", "Dragon's Tail — endings, the portal drains downward"),
-    ("⚊⚊\n⚊⚊\n⚋⚋\n⚊⚊", "Puella", "The Girl — beauty, receptivity, Venus smiles"),
-    ("⚋⚋\n⚊⚊\n⚊⚊\n⚋⚋", "Puer", "The Boy — aggression, impulse, Mars charges"),
-    ("⚊⚊\n⚋⚋\n⚊⚊\n⚊⚊", "Rubeus", "The Red — passion, danger, blood on the sand"),
-    ("⚋⚋\n⚊⚊\n⚋⚋\n⚋⚋", "Albus", "The White — wisdom, clarity, the sage speaks"),
+    ("⚊⚊\n⚊⚊\n⚊⚊\n⚊⚊", "Vía", "El Camino — movimiento puro, el sendero mismo es la respuesta"),
+    ("⚋⚋\n⚋⚋\n⚋⚋\n⚋⚋", "Populus", "El Pueblo — colectivo, disolución, la multitud decide"),
+    ("⚊⚊\n⚋⚋\n⚋⚋\n⚊⚊", "Carcer", "La Prisión — restricción que revela, confinamiento necesario"),
+    ("⚋⚋\n⚊⚊\n⚊⚊\n⚋⚋", "Conjunctio", "El Encuentro — unión de opuestos, encrucijada"),
+    ("⚊⚊\n⚊⚊\n⚋⚋\n⚋⚋", "Fortuna Major", "Gran Fortuna — éxito abrumador, el sol asciende"),
+    ("⚋⚋\n⚋⚋\n⚊⚊\n⚊⚊", "Fortuna Minor", "Pequeña Fortuna — suerte fugaz, agárrala YA"),
+    ("⚊⚊\n⚋⚋\n⚊⚊\n⚋⚋", "Acquisitio", "La Ganancia — acumulación, lo que entra no sale"),
+    ("⚋⚋\n⚊⚊\n⚋⚋\n⚊⚊", "Amissio", "La Pérdida — soltar, lo que se va nunca fue verdaderamente tuyo"),
+    ("⚊⚊\n⚊⚊\n⚊⚊\n⚋⚋", "Laetitia", "Alegría — ascenso, la fuente, risa de la tierra"),
+    ("⚋⚋\n⚊⚊\n⚊⚊\n⚊⚊", "Tristitia", "Tristeza — descenso, el pozo, pena que profundiza"),
+    ("⚊⚊\n⚋⚋\n⚋⚋\n⚋⚋", "Caput Draconis", "Cabeza del Dragón — comienzos, el portal se abre hacia arriba"),
+    ("⚋⚋\n⚋⚋\n⚋⚋\n⚊⚊", "Cauda Draconis", "Cola del Dragón — finales, el portal drena hacia abajo"),
+    ("⚊⚊\n⚊⚊\n⚋⚋\n⚊⚊", "Puella", "La Doncella — belleza, receptividad, Venus sonríe"),
+    ("⚋⚋\n⚊⚊\n⚊⚊\n⚋⚋", "Puer", "El Muchacho — agresión, impulso, Marte carga"),
+    ("⚊⚊\n⚋⚋\n⚊⚊\n⚊⚊", "Rubeus", "El Rojo — pasión, peligro, sangre en la arena"),
+    ("⚋⚋\n⚊⚊\n⚋⚋\n⚋⚋", "Albus", "El Blanco — sabiduría, claridad, el sabio habla"),
 ]
 
-# Chinese Wu Xing (五行) — Five Phases with productive/destructive cycles
+# Wu Xing chino (五行) — Cinco Fases con ciclos productivo/destructivo
 WU_XING = [
-    ("木 Mù", "Wood", "🌳", "Growth, flexibility, the bamboo that bends", "feeds Fire", "overcomes Earth"),
-    ("火 Huǒ", "Fire", "🔥", "Passion, brilliance, the forge of creation", "feeds Earth", "overcomes Metal"),
-    ("土 Tǔ", "Earth", "🏔️", "Stability, nourishment, the mother of ten thousand", "feeds Metal", "overcomes Water"),
-    ("金 Jīn", "Metal", "⚔️", "Precision, grief, the blade that discerns", "feeds Water", "overcomes Wood"),
-    ("水 Shuǐ", "Water", "🌊", "Wisdom, fear, the abyss that reflects", "feeds Wood", "overcomes Fire"),
+    ("木 Mù", "Madera", "🌳", "Crecimiento, flexibilidad, el bambú que se dobla", "alimenta al Fuego", "domina la Tierra"),
+    ("火 Huǒ", "Fuego", "🔥", "Pasión, brillo, la fragua de la creación", "alimenta la Tierra", "domina el Metal"),
+    ("土 Tǔ", "Tierra", "🏔️", "Estabilidad, nutrición, la madre de diez mil cosas", "alimenta el Metal", "domina el Agua"),
+    ("金 Jīn", "Metal", "⚔️", "Precisión, duelo, la hoja que discierne", "alimenta el Agua", "domina la Madera"),
+    ("水 Shuǐ", "Agua", "🌊", "Sabiduría, miedo, el abismo que refleja", "alimenta la Madera", "domina el Fuego"),
 ]
 
-# Hindu Chakras
+# Chakras hindúes
 CHAKRAS = [
-    ("Muladhara", "मूलाधार", "🔴", "Root — survival, earth, I AM"),
-    ("Svadhisthana", "स्वाधिष्ठान", "🟠", "Sacral — pleasure, water, I FEEL"),
-    ("Manipura", "मणिपूर", "🟡", "Solar Plexus — power, fire, I DO"),
-    ("Anahata", "अनाहत", "🟢", "Heart — love, air, I LOVE"),
-    ("Vishuddha", "विशुद्ध", "🔵", "Throat — truth, ether, I SPEAK"),
-    ("Ajna", "आज्ञा", "🟣", "Third Eye — intuition, light, I SEE"),
-    ("Sahasrara", "सहस्रार", "⚪", "Crown — consciousness, thought, I UNDERSTAND"),
+    ("Muladhara", "मूलाधार", "🔴", "Raíz — supervivencia, tierra, YO SOY"),
+    ("Svadhisthana", "स्वाधिष्ठान", "🟠", "Sacro — placer, agua, YO SIENTO"),
+    ("Manipura", "मणिपूर", "🟡", "Plexo solar — poder, fuego, YO ACTÚO"),
+    ("Anahata", "अनाहत", "🟢", "Corazón — amor, aire, YO AMO"),
+    ("Vishuddha", "विशुद्ध", "🔵", "Garganta — verdad, éter, YO HABLO"),
+    ("Ajna", "आज्ञा", "🟣", "Tercer ojo — intuición, luz, YO VEO"),
+    ("Sahasrara", "सहस्रार", "⚪", "Corona — consciencia, pensamiento, YO COMPRENDO"),
 ]
 
 
@@ -271,7 +271,7 @@ def generate_tarot(run_date: str, sign: str) -> str:
     rng = random.Random(_seed(run_date, sign))
     cards = rng.sample(TAROT_MAJOR, 3)
     lines = []
-    for label, card in zip(["Past", "Present", "Future"], cards):
+    for label, card in zip(["Pasado", "Presente", "Futuro"], cards):
         emoji = TAROT_EMOJIS.get(card, "🎴")
         lines.append(f"{label}: {emoji} {card}")
     return "\n".join(lines)
@@ -282,7 +282,7 @@ def generate_iching(run_date: str, sign: str) -> str:
     rng = random.Random(_seed(run_date, sign) + 42)
     upper = rng.choice(TRIGRAMS)
     lower = rng.choice(TRIGRAMS)
-    return f"{upper}{lower} — {TRIGRAM_NAMES[upper]} over {TRIGRAM_NAMES[lower]}"
+    return f"{upper}{lower} — {TRIGRAM_NAMES[upper]} sobre {TRIGRAM_NAMES[lower]}"
 
 
 def calculate_moon_phase(run_date: str) -> str:
@@ -292,19 +292,19 @@ def calculate_moon_phase(run_date: str) -> str:
     phase_pct = moon.phase
 
     if phase_pct < 2:
-        name, emoji = "New Moon", "🌑"
+        name, emoji = "Luna Nueva", "🌑"
     elif phase_pct < 25:
-        name, emoji = "Waxing Crescent", "🌒"
+        name, emoji = "Creciente", "🌒"
     elif phase_pct < 48:
-        name, emoji = "First Quarter", "🌓"
+        name, emoji = "Cuarto Creciente", "🌓"
     elif phase_pct < 75:
-        name, emoji = "Waxing Gibbous", "🌔"
+        name, emoji = "Gibosa Creciente", "🌔"
     elif phase_pct < 98:
-        name, emoji = "Full Moon", "🌕"
+        name, emoji = "Luna Llena", "🌕"
     elif phase_pct < 100:
-        name, emoji = "Waning Gibbous", "🌖"
+        name, emoji = "Gibosa Menguante", "🌖"
     else:
-        name, emoji = "Full Moon", "🌕"
+        name, emoji = "Luna Llena", "🌕"
 
     # Refine waning
     # ephem.phase goes 0 (new) -> 100 (full) -> 0 (new)
@@ -313,11 +313,11 @@ def calculate_moon_phase(run_date: str) -> str:
     prev_moon = ephem.Moon(prev_day)
     if prev_moon.phase > phase_pct and phase_pct > 50:
         if phase_pct > 75:
-            name, emoji = "Waning Gibbous", "🌖"
+            name, emoji = "Gibosa Menguante", "🌖"
         elif phase_pct > 48:
-            name, emoji = "Last Quarter", "🌗"
+            name, emoji = "Cuarto Menguante", "🌗"
         else:
-            name, emoji = "Waning Crescent", "🌘"
+            name, emoji = "Menguante", "🌘"
 
     return f"{emoji} {name} ({phase_pct:.1f}%)"
 
@@ -333,20 +333,20 @@ def generate_numerology(run_date: str, sign: str) -> str:
         total = sum(int(d) for d in str(total))
 
     meanings = {
-        1: "🔱 New beginnings, independence, raw force",
-        2: "☯️ Duality, partnership, hidden balance",
-        3: "🔺 Creation, expression, cosmic comedy",
-        4: "🧱 Structure, foundation, stubborn earth",
-        5: "🌀 Change, freedom, beautiful chaos",
-        6: "💝 Harmony, responsibility, the lover's burden",
-        7: "👁️ Mystery, introspection, the void stares back",
-        8: "♾️ Power, infinity, karmic loops",
-        9: "🔮 Completion, wisdom, the end that is a beginning",
-        11: "⚡ Master Illumination — the lightning path",
-        22: "🏗️ Master Builder — architect of impossible dreams",
-        33: "🌟 Master Teacher — the cosmic professor is in",
+        1: "🔱 Nuevos comienzos, independencia, fuerza bruta",
+        2: "☯️ Dualidad, alianza, equilibrio oculto",
+        3: "🔺 Creación, expresión, comedia cósmica",
+        4: "🧱 Estructura, cimientos, tierra obstinada",
+        5: "🌀 Cambio, libertad, caos hermoso",
+        6: "💝 Armonía, responsabilidad, la carga del amante",
+        7: "👁️ Misterio, introspección, el abismo devuelve la mirada",
+        8: "♾️ Poder, infinito, bucles kármicos",
+        9: "🔮 Culminación, sabiduría, el final que es un principio",
+        11: "⚡ Iluminación Maestra — el camino del rayo",
+        22: "🏗️ Constructor Maestro — arquitecto de sueños imposibles",
+        33: "🌟 Maestro de Maestros — el profesor cósmico está en clase",
     }
-    return f"Vibration {total}: {meanings.get(total, '🎲 Unknown resonance')}"
+    return f"Vibración {total}: {meanings.get(total, '🎲 Resonancia desconocida')}"
 
 
 def generate_biorhythm(run_date: str, sign: str) -> str:
@@ -363,9 +363,9 @@ def generate_biorhythm(run_date: str, sign: str) -> str:
         return "█" * filled + "░" * (10 - filled)
 
     return (
-        f"Physical:     [{bar(physical)}] {physical:+.2f}\n"
-        f"Emotional:    [{bar(emotional)}] {emotional:+.2f}\n"
-        f"Intellectual: [{bar(intellectual)}] {intellectual:+.2f}"
+        f"Físico:      [{bar(physical)}] {physical:+.2f}\n"
+        f"Emocional:   [{bar(emotional)}] {emotional:+.2f}\n"
+        f"Intelectual: [{bar(intellectual)}] {intellectual:+.2f}"
     )
 
 
@@ -374,7 +374,7 @@ def generate_element_color(run_date: str, sign: str) -> str:
     rng = random.Random(_seed(run_date, sign) + 777)
     element = rng.choice(ELEMENTS)
     color = rng.choice(COLORS)
-    return f"Element: {element} | Color: {color}"
+    return f"Elemento: {element} | Color: {color}"
 
 
 def generate_chaos_rating(run_date: str, sign: str) -> str:
@@ -384,28 +384,28 @@ def generate_chaos_rating(run_date: str, sign: str) -> str:
     chaos = max(0, min(100, chaos))
 
     if chaos > 90:
-        desc = "MAXIMUM ENTROPY 🌪️💥"
+        desc = "ENTROPÍA MÁXIMA 🌪️💥"
     elif chaos > 70:
-        desc = "Turbulent waters ahead 🌊"
+        desc = "Aguas turbulentas por delante 🌊"
     elif chaos > 50:
-        desc = "Moderate cosmic interference 🌀"
+        desc = "Interferencia cósmica moderada 🌀"
     elif chaos > 30:
-        desc = "Relative calm in the void 🕊️"
+        desc = "Calma relativa en el vacío 🕊️"
     else:
-        desc = "Suspiciously peaceful... 😐"
+        desc = "Sospechosamente pacífico... 😐"
 
-    return f"Chaos coefficient: {chaos:.1f}% — {desc}"
+    return f"Coeficiente de caos: {chaos:.1f}% — {desc}"
 
 
 def generate_rune_cast(run_date: str, sign: str) -> str:
     """Cast 3 Elder Futhark runes (situation, challenge, outcome)."""
     rng = random.Random(_seed(run_date, sign) + 2718)
     drawn = rng.sample(RUNES, 3)
-    labels = ["Situation", "Challenge", "Outcome"]
+    labels = ["Situación", "Desafío", "Resultado"]
     lines = []
     for label, (glyph, name, meaning) in zip(labels, drawn):
         # 20% chance of reversed (merkstave)
-        reversed_str = " ᛭REVERSED᛭" if rng.random() < 0.2 else ""
+        reversed_str = " ᛭INVERTIDA᛭" if rng.random() < 0.2 else ""
         lines.append(f"{label}: {glyph} {name}{reversed_str} — {meaning}")
     return "\n".join(lines)
 
@@ -439,8 +439,8 @@ def generate_ifa(run_date: str, sign: str) -> str:
     name1, marks1, meaning1 = primary
     name2, marks2, meaning2 = secondary
     return (
-        f"Primary Odù: {name1} — {meaning1}\n"
-        f"Witness Odù: {name2} — {meaning2}"
+        f"Odù principal: {name1} — {meaning1}\n"
+        f"Odù testigo: {name2} — {meaning2}"
     )
 
 
@@ -451,8 +451,8 @@ def generate_ogham(run_date: str, sign: str) -> str:
     glyph1, name1, meaning1 = drawn[0]
     glyph2, name2, meaning2 = drawn[1]
     return (
-        f"Foundation: {glyph1} {name1} — {meaning1}\n"
-        f"Growth:     {glyph2} {name2} — {meaning2}"
+        f"Cimiento:    {glyph1} {name1} — {meaning1}\n"
+        f"Crecimiento: {glyph2} {name2} — {meaning2}"
     )
 
 
@@ -462,22 +462,22 @@ def generate_geomancy(run_date: str, sign: str) -> str:
     figure, name, meaning = rng.choice(GEOMANCY)
     house = rng.randint(1, 12)  # Geomantic house (like astrological houses)
     house_meanings = {
-        1: "Self", 2: "Wealth", 3: "Siblings", 4: "Home",
-        5: "Pleasure", 6: "Health", 7: "Partnership", 8: "Death/Rebirth",
-        9: "Journeys", 10: "Career", 11: "Hopes", 12: "Hidden enemies",
+        1: "Yo", 2: "Riqueza", 3: "Hermanos", 4: "Hogar",
+        5: "Placer", 6: "Salud", 7: "Pareja", 8: "Muerte/Renacimiento",
+        9: "Viajes", 10: "Carrera", 11: "Esperanzas", 12: "Enemigos ocultos",
     }
-    return f"🏜️ {name} in House {house} ({house_meanings[house]})\n{meaning}"
+    return f"🏜️ {name} en Casa {house} ({house_meanings[house]})\n{meaning}"
 
 
 def generate_wu_xing(run_date: str, sign: str) -> str:
     """Determine the dominant Wu Xing (五行) phase and its cycle position."""
     rng = random.Random(_seed(run_date, sign) + 5555)
-    chinese, english, emoji, meaning, feeds, overcomes = rng.choice(WU_XING)
-    intensity = rng.choice(["waxing", "peak", "waning", "dormant"])
+    chinese, spanish, emoji, meaning, feeds, overcomes = rng.choice(WU_XING)
+    intensity = rng.choice(["creciente", "cénit", "menguante", "latente"])
     return (
-        f"{emoji} {chinese} ({english}) — {intensity}\n"
+        f"{emoji} {chinese} ({spanish}) — {intensity}\n"
         f"{meaning}\n"
-        f"Productive cycle: {feeds} | Destructive cycle: {overcomes}"
+        f"Ciclo productivo: {feeds} | Ciclo destructivo: {overcomes}"
     )
 
 
@@ -498,7 +498,7 @@ def generate_chakra_alignment(run_date: str, sign: str) -> str:
         lines.append(f"{color} [{bar}] {name} ({sanskrit}) {activation:.0f}%")
 
     dominant = CHAKRAS[dominant_idx]
-    lines.append(f"\nDominant: {dominant[2]} {dominant[0]} — {dominant[3]}")
+    lines.append(f"\nDominante: {dominant[2]} {dominant[0]} — {dominant[3]}")
     return "\n".join(lines)
 
 
@@ -542,7 +542,7 @@ def generate_all_noise(run_date: str | None = None) -> dict[str, dict[str, str]]
 
 
 if __name__ == "__main__":
-    print("=== Generating cosmic noise ===\n")
+    print("=== Generando ruido cósmico ===\n")
     all_noise = generate_all_noise()
     for sign, noise in all_noise.items():
         print(f"\n{'='*60}")
