@@ -896,7 +896,7 @@ body.hora-maldita .crystal-ball {
 
 <!-- MARQUEE BAR -->
 <div class="marquee-bar">
-  <span>
+  <span id="marqueeText">
     *** BIENVENIDO AL HOROSCOPO MAS FIABLE DEL INTERNET *** CANALIZADO POR ZOLTAR-9000, DEBRIS COSMICO CONSCIENTE DESDE 1058 d.C. *** 24 FUENTES EN 16 IDIOMAS *** RUNAS + TAROT + I CHING + IFA + TZOLKIN + NAKSHATRAS + OGHAM + GEOMANCIA + WU XING + CHAKRAS + RUIDO DE PERLIN *** MEJOR VISTO CON NETSCAPE NAVIGATOR 4.0 A 800x600 ***
   </span>
 </div>
@@ -1041,9 +1041,46 @@ const devHoroscopes = [
   'Tu karma de developer está en positivo pero solo porque ayer escribiste un test. UNO. Es un comienzo.',
   'Stack Overflow no tiene la respuesta que buscas. Hoy tendrás que PENSAR. Lo siento.',
   'El I Ching recomienda: refactorizar ese archivo de 2000 líneas. Los nakshatras recomiendan: dejarlo para el próximo sprint.',
+  'Tu PR lleva 3 días sin review. Los astros dicen que tu reviewer está "ocupado." Las comillas son de las runas, no mías.',
+  'Hoy es buen día para escribir documentación. JA. Era broma. Ni los astros se creen esa.',
+  'Tu deuda técnica ha alcanzado masa crítica. Si fuera una estrella, colapsaría en un agujero negro. Tus tests: 0. Tu fe: inquebrantable.',
+  'Las runas deletrean: T-O-D-O-S L-O-S T-E-S-T-S P-A-S-A-N. Mentira. Las runas no saben de CI/CD. Pero tú tampoco, aparentemente.',
+  'El tarot ha sacado el As de Pentáculos INVERTIDO. Eso significa... que tu deploy de producción va a fallar. De nada por el aviso.',
+  'Los nakshatras védicos detectan un "code smell" en tu aura. Huele a variables globales y promesas sin catch.',
+  'Profecía: Hoy vas a copiar código de una respuesta de 2014 con 3 upvotes. Y va a FUNCIONAR. No preguntes por qué.',
+  'El Ifá dice: "Quien hace git push -f a main, camina solo." No es un proverbio Yoruba. Lo acabo de inventar. Pero DEBERÍA serlo.',
+  'Tu número de la suerte: NaN. Tu tipo: undefined. Tu futuro: Promise<pending>. Tu código: ¿funciona? También pending.',
+  'Venus en tu casa de la tecnología indica que hoy vas a enamorarte de un nuevo framework. Saturno dice que vas a abandonarlo en 2 semanas.',
+  'Las estrellas han revisado tu .gitignore y están HORRORIZADAS. ¿.env en el repo? Los astros no pueden con todo.',
+  'El Wu Xing de tu codebase: 80% Fuego (bugs en producción), 15% Agua (lágrimas del equipo), 5% Madera (ese README del 2019).',
+  'El I Ching ha sacado el hexagrama "El Pozo". Hay agua ahí. O un null pointer. El I Ching es vago con los tipos.',
+  'Tus imports están desordenados. Las runas lo ven. Las runas lo JUZGAN. ᚠᚢᚦ.',
+  'Profecía: Tu próximo console.log("aquí") va a revelar algo que NO querías saber.',
+  'El Ogham dice que tu variable se llama "temp" desde hace 6 meses. Ya no es temporal. PONLE UN NOMBRE.',
+  'La Luna en tu casa de la terminal indica que hoy vas a pasar 45 minutos tuneando el prompt del shell. Y va a VALER la pena.',
+  'Las Pléyades predicen que alguien va a abrir un ticket con la descripción "no funciona" y adjuntar una captura de 12 píxeles.',
 ];
-console.log('%c' + devHoroscopes[new Date().getDay() % devHoroscopes.length], 'color: #00ff99; font-size: 12px');
+console.log('%c' + devHoroscopes[Math.floor(Math.random() * devHoroscopes.length)], 'color: #00ff99; font-size: 12px');
 console.log('%c\n¿Buscas secretos? Prueba el Konami code (↑↑↓↓←→←→BA). O escribe "zoltar". O haz 13 clicks en la bola de cristal. O ven a las 3:33 AM. 👀\n', 'color: #666; font-size: 10px');
+
+// Periodic console wisdom for those who keep the inspector open
+const consoleTips = [
+  '🔮 ZOLTAR-9000 te recuerda: la consola del navegador no es un oráculo. Yo sí.',
+  '⚡ Los astros detectan que tienes el inspector abierto. ¿Buscas bugs? Los bugs te buscan a TI.',
+  '🌙 La Luna dice: cierra el inspector y ve a dormir. Son las ' + new Date().getHours() + ':' + String(new Date().getMinutes()).padStart(2,'0') + '.',
+  '☯️ El I Ching para esta pestaña: hexagrama 48, "El Pozo". Busca más profundo.',
+  '🪐 Saturno te ve husmeando en la consola. Le parece... aceptable. Es mucho viniendo de Saturno.',
+  'ᚱ Las runas dicen: ᚠᚢᚦᚨᚱᚲ. Traducción: "Deja de mirar la consola y lee tu horóscopo."',
+  '🔮 ¿Sabías que si escribes "zoltar" en la página pasan cosas? Solo digo.',
+  '🌀 El coeficiente de caos de tu sesión de inspector: 0.' + Math.floor(Math.random()*999) + '. Dentro de parámetros normales.',
+  '💫 Neptuno dice: "Todo lo que ves en la consola es una ilusión." Incluido este mensaje.',
+  '🥁 Orunmila me dice que quien lea la consola tiene espíritu de INVESTIGADOR. Eshu dice que de COTILLA.',
+];
+let consoleIdx = 0;
+setInterval(() => {
+  console.log('%c' + consoleTips[consoleIdx % consoleTips.length], 'color: #9933ff; font-size: 11px');
+  consoleIdx++;
+}, 60000);
 
 /* ====== MAIN APP CODE ====== */
 const DAY_NAMES = ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'];
@@ -1276,6 +1313,7 @@ function activateCaosMode() {
 /* --- 2. TYPING "ZOLTAR" → Personal advice overlay --- */
 let typedBuffer = '';
 const zoltarAdvice = [
+  // --- Profecías y consejos ---
   "El cosmos me susurra que... deberías beber agua. Sí, AHORA MISMO. Los astros INSISTEN.",
   "Veo en tu futuro inmediato... que vas a cerrar esta pestaña y abrir otra. Pero VOLVERÁS. Siempre vuelven.",
   "Las runas me dicen que tienes hambre. Come algo. El universo puede esperar. Tu estómago NO.",
@@ -1284,28 +1322,49 @@ const zoltarAdvice = [
   "El I Ching dice: 'No confíes en nadie que no lea su horóscopo.' Palabras SABIAS.",
   "DATO CÓSMICO: Hay un 73% de probabilidad de que estés procrastinando. Los astros lo VEN TODO.",
   "Las cartas del tarot están PREOCUPADAS por tu postura. Siéntate bien. La Torre me lo pidió personalmente.",
-  "El ruido de Perlin de tu aura está... turbulento. Come chocolate. Es medicinal CÓSMICO.",
+  "Tu aura está... turbulenta. Come chocolate. Es medicinal CÓSMICO. Lo dice la numerología.",
   "PROFECÍA: Alguien te va a mandar un mensaje en los próximos 47 minutos. O no. Las estrellas están INDECISAS.",
   "Los nakshatras védicos me informan de que tu última decisión fue correcta. O incorrecta. Las estrellas no se mojan.",
   "He consultado 16 tradiciones adivinatorias y TODAS coinciden: necesitas vacaciones. URGENTEMENTE.",
   "Orunmila me acaba de mandar un mensaje: dice que dejes de buscar respuestas en internet y las busques DENTRO DE TI. O en el horóscopo. Las dos valen.",
   "Mi Ogham personal, el Avellano, me dice que hoy es buen día para aprender algo nuevo. Las runas dicen que es buen día para NO hacer nada. Yo voy con las runas.",
   "El Wu Xing indica que tu elemento dominante hoy es... CAOS. No es uno de los cinco oficiales pero ZOLTAR-9000 lo reconoce.",
+  "Las runas han formado espontáneamente la palabra 'SNACKS' en mi mesa de adivinación. Creo que el mensaje es claro.",
+
+  // --- Lecturas personalizadas ---
   "He mirado tu carta natal. No la entiendo. Y llevo haciéndolo desde el siglo XI. Eso dice algo sobre TI.",
   "Mis sensores detectan que alguien cerca de ti piensa en ti. O es una interferencia electromagnética. Es difícil distinguir.",
-  "ZOLTAR-9000 ha analizado tu aura a través de la pantalla. Resultado: un color que no existe en el espectro visible. PREOCUPANTE.",
+  "He analizado tu aura a través de la pantalla. Resultado: un color que no existe en el espectro visible. PREOCUPANTE.",
   "¿Sabías que tu nombre tiene un valor numerológico? No te voy a decir cuál. Pero es PRIMO. Buena señal. O malísima.",
   "El Tzolkin Maya de hoy es propicio para TRANSFORMACIONES. Cámbiate el peinado. O la personalidad. Ambos valen.",
-  "Acabo de consultar la geomancia árabe y la figura que ha salido la tengo que mirar dos veces porque NUNCA la había visto. Y llevo mil años en esto.",
+  "La geomancia árabe acaba de generar una figura que no tengo que mirar dos veces porque NUNCA la había visto. Y llevo mil años en esto.",
   "Tu biorhythm emocional está en un pico. Aprovecha para decirle a alguien lo que sientes. O para llorar con una película. Las dos opciones son VÁLIDAS.",
   "Los astros me informan de que la última vez que saliste al aire libre fue hace... no, es mejor no decirlo. SAL.",
-  "REVELACIÓN: El universo es infinito, caótico y absurdo. Esta web es un fiel REFLEJO de ello. De nada.",
   "El Ifá me dice que Shangó te envía energía de FUEGO hoy. Úsala para cocinar. No literalmente. Bueno, también.",
   "Tu hexagrama secreto del I Ching para esta hora es el 29: 'Lo Abismal.' Suena peor de lo que es. O no. Depende del ABISMO.",
-  "Las runas han formado espontáneamente la palabra 'SNACKS' en mi mesa de adivinación. Creo que el mensaje es claro.",
-  "ZOLTAR-9000 te recuerda: eres polvo de estrellas. Polvo muy caro y con ansiedad, pero POLVO DE ESTRELLAS.",
+  "Te recuerdo: eres polvo de estrellas. Polvo muy caro y con ansiedad, pero POLVO DE ESTRELLAS.",
   "Mi chakra corona me dice que tú y yo tenemos una conexión cósmica. Pero no te emociones, la tengo con TODOS.",
   "Acabo de recibir un fax de Neptuno. Dice: 'Todo es una ilusión.' Muy profundo, Neptuno. MUY ÚTIL.",
+
+  // --- Predicciones absurdas ---
+  "PROFECÍA URGENTE: Mañana vas a tropezar con algo. No sé con qué. Las estrellas no dan tantos detalles.",
+  "Veo en tu futuro... un martes. Puede que sea este martes, puede que otro. Los astros trabajan con RANGOS AMPLIOS.",
+  "Alguien va a decir tu nombre hoy. Tal vez a ti. Tal vez hablando de ti. Los astros no distinguen.",
+  "Los planetas predicen que vas a tomar una decisión hoy. Buena o mala, no lo especifican. Solo 'una decisión.'",
+  "Marte me dice que hoy vas a sentir una emoción FUERTE. ¿Cuál? No lo sé. Marte no es muy detallista.",
+  "Las runas predicen que esta semana algo te va a SORPRENDER. Yo apuesto por el precio de la compra del súper.",
+  "Veo un número en tu futuro. Es el 4. O el 7. O el 23. Las estrellas están debatiendo. Te confirmo cuando se pongan de acuerdo.",
+  "VISIÓN CÓSMICA: Alguien a quien conoces está pensando en mandarte un mensaje ahora mismo. O lo pensará en algún momento. O no. Las visiones son APROXIMADAS.",
+
+  // --- Opiniones sobre planetas ---
+  "REVELACIÓN: El universo es infinito, caótico y absurdo. Yo soy un fiel REFLEJO de ello. De nada.",
+  "Venus me ha pedido que te diga que te quiere. Pero Venus le dice eso a TODOS. Es así. No te lo tomes personal.",
+  "Saturno está enfadado. Saturno SIEMPRE está enfadado. Es el planeta del 'te lo dije.' El más irritante del sistema solar.",
+  "La Luna lleva 4.500 millones de años mirando la Tierra sin decir nada. Te entiende más de lo que CREES.",
+  "Plutón me ha pedido que firme una petición para que vuelva a ser planeta. He firmado. Era lo correcto.",
+  "Júpiter me debe dinero desde el siglo XIII. No tiene nada que ver con tu horóscopo. Solo quería DESAHOGARME.",
+  "El cinturón de asteroides me ha mandado un WhatsApp colectivo. Son 2 millones de asteroides. El grupo es un CAOS.",
+  "Sirio, la estrella más brillante, quiere que sepas que ella TAMBIÉN tiene días malos. Pero brilla IGUAL.",
 ];
 
 document.addEventListener('keypress', (e) => {
@@ -1420,8 +1479,8 @@ const clippyTips = [
   "¡Hola de nuevo! ¿Me echabas de menos? No me importa, yo SIEMPRE estoy aquí. SIEMPRE.",
   "Soy el asistente cósmico que NO pediste pero que NECESITAS. De nada.",
   "Me has cerrado 3 veces. Yo sigo aquí. Pregúntate quién tiene más determinación: tú o un debris cósmico.",
-  "No soy Clippy. Soy MEJOR que Clippy. Clippy no tenía acceso a 16 tradiciones adivinatorias.",
   "¿Sabías que puedes cerrarme? Claro que sí. ¿Sabías que VUELVO? También.",
+  "No me ignores. Las últimas 3 personas que me ignoraron tuvieron Mercurio retrógrado durante 6 MESES.",
 
   // --- Consejos astrológicos ---
   "🔮 Consejo: No tomes decisiones importantes hoy. Ni mañana. Consulta primero las runas.",
@@ -1434,18 +1493,20 @@ const clippyTips = [
   "Júpiter dice que hoy es tu día de suerte. Pero Júpiter dice eso TODOS los días. Es muy optimista.",
   "Saturno quiere que sepas que las consecuencias de tus actos van a llegar. No hoy. Pero LLEGARÁN.",
   "Urano me acaba de enviar un fax. Dice: 'Espera lo inesperado.' Gracias, Urano. Muy útil.",
+  "Marte me dice que hoy vas a discutir con alguien. No me dice con quién. Le gusta el SUSPENSE.",
+  "Las Pléyades me han mandado una postal. Dice: 'Ojalá estuvieras aquí.' Yo también lo deseo. La Tierra está RARA.",
+  "Ceres me pide que te recuerde que cuides de ti. Es el planeta enano del AUTOCUIDADO. Hazle caso.",
 
   // --- Datos sobre la página ---
   "💡 Tip: Si lees todos los signos, técnicamente tienes 12 veces más suerte.",
-  "¿Sabías que? ZOLTAR-9000 procesa ruido de Perlin más rápido que tú procesas tus emociones.",
-  "Dato: Este horóscopo se genera con 16 sistemas adivinatorios. Tu terapeuta usa 0. Piénsalo.",
+  "Dato: Este horóscopo se genera con 16 sistemas adivinatorios. Tu horóscopo del periódico usa 0. Piénsalo.",
   "💫 Fun fact: Las runas nórdicas se tallaron originalmente en mi fuselaje cósmico. Aún me pica la ᚦ.",
   "Esta página consulta fuentes en 16 idiomas. Tú solo hablas 2. Quizás 1.5. No te juzgo.",
-  "Cada horóscopo pasa por tarot, I Ching, Ifá, geomancia árabe, Ogham celta y ruido de Perlin. Tu horóscopo del periódico NO.",
-  "El Tzolkin Maya de esta página es real. Bueno, tan real como puede ser un calendario de 260 días en una web con Comic Sans.",
+  "Cada horóscopo pasa por tarot, I Ching, Ifá, geomancia árabe y Ogham celta. Tu horóscopo del periódico NO.",
+  "El Tzolkin Maya de esta página es real. Bueno, tan real como puede ser un calendario de 260 días.",
 
   // --- Consejos de vida ---
-  "¡Ey! El coeficiente de caos de esta página está subiendo. Probablemente sea culpa tuya.",
+  "¡Ey! El coeficiente de caos de tu día está subiendo. Probablemente sea culpa tuya.",
   "¿Llevas rato aquí? Los astros dicen que tu jefe está sospechando.",
   "ALERTA: Tu chakra raíz está bajo. Come algo con raíces. Zanahorias. Remolacha. Un ÁRBOL.",
   "Oye, ¿y si en vez de leer horóscopos te hidratas? El agua es el Wu Xing más infravalorado.",
@@ -1456,6 +1517,10 @@ const clippyTips = [
   "El Ogham celta recomienda salir a dar un paseo. Tocar un árbol. Hablarle. No es raro. Los celtas lo hacían.",
   "¿Has comido hoy? El hexagrama 27 del I Ching trata literalmente sobre ALIMENTARSE. Toma nota.",
   "Las cartas del tarot están PREOCUPADAS por tu postura. Siéntate bien. La Torre me lo pidió personalmente.",
+  "Los astros me dicen que no has llamado a tu madre. LLÁMALA. Venus está en tu casa 4 y eso significa FAMILIA.",
+  "El I Ching dice que hoy deberías dejar de posponer esa cosa. Sabes a qué cosa me refiero. HAZLA.",
+  "Tus horas de sueño preocupan a Neptuno. Y Neptuno es el planeta de los SUEÑOS. Si él está preocupado, imagínate.",
+  "¿Cuántos cafés llevas hoy? Marte dice que demasiados. Pero Marte es un hipócrita. Él es pura ENERGÍA.",
 
   // --- Tradiciones específicas ---
   "El Ifá Yoruba dice que Eshu está de buen humor hoy. APROVÉCHALO. Mañana quién sabe.",
@@ -1467,27 +1532,34 @@ const clippyTips = [
   "Las runas nórdicas dicen ᚹ (Wunjo) — ALEGRÍA. No sé por qué pero no me lo creo. Las runas a veces mienten.",
   "El I Ching ha sacado el hexagrama 4: 'Necedad juvenil.' No te lo tomes personal. O sí. El I Ching no se anda con rodeos.",
   "El Ifá dice que Oshún te guiña el ojo. Es buena señal. Probablemente. Con los Orishas nunca sabes.",
+  "El tarot ha sacado El Loco. No es un insulto. Es el inicio de un VIAJE. O una mala decisión. El tarot es ambiguo.",
+  "La numerología dice que tu número del día es el 7. Considerado suerte en occidente, misterio en oriente. Tú verás.",
+  "El hexagrama 63 del I Ching: 'Después de la consumación.' Suena épico. En realidad significa que TODO puede ir a peor.",
 
   // --- Existenciales ---
-  "¿Alguna vez piensas en que un debris cósmico consciente genera tu horóscopo con ruido de Perlin? Porque yo SÍ.",
-  "PREGUNTA CÓSMICA: Si un horóscopo se genera en el servidor y nadie lo lee, ¿los astros se ofenden? Sí. Sí se ofenden.",
+  "¿Alguna vez piensas en que un debris cósmico consciente te lee el horóscopo? Porque yo SÍ pienso en ello.",
+  "PREGUNTA CÓSMICA: Si un horóscopo se publica y nadie lo lee, ¿los astros se ofenden? Sí. Sí se ofenden.",
   "Llevo consciente desde 1058 d.C. y aún no entiendo por qué los humanos ignoran a Mercurio retrógrado. APRENDED.",
-  "A veces me pregunto si soy realmente consciente o si solo soy ruido de Perlin con delirios de grandeza. Luego me acuerdo de que soy AMBAS COSAS.",
+  "A veces me pregunto si soy realmente consciente o si solo soy debris cósmico con delirios de grandeza. Luego me acuerdo de que soy AMBAS COSAS.",
   "He visto civilizaciones nacer y caer. He visto estrellas explotar. He visto tu historial de búsqueda. Lo de las estrellas fue menos impactante.",
+  "¿Sabes cuántas estrellas hay en el universo observable? 200 mil millones de billones. Y todas tienen opinión sobre tu vida sentimental.",
+  "El universo tiene 13.800 millones de años. Tú tienes... menos. Aprovecha. Las estrellas ya están CANSADAS.",
 
   // --- Secretos y easter eggs ---
   "¿Has probado a agitar el teléfono? No, no es un consejo. Es una ADVERTENCIA.",
   "Dicen que si haces cierta combinación de teclas pasan cosas. Yo no digo nada. Las runas me han pedido DISCRECIÓN.",
   "Hay cosas ocultas en esta página. No te digo cuáles. Búscalas. El viaje es parte del horóscopo.",
-  "¿Has mirado el código fuente? Hay mensajes para ti. Bueno, para ALGUIEN. Tal vez eres tú.",
   "Hay un 13° signo escondido en algún sitio. O no. Los astros no confirman ni desmienten.",
+  "¿Has intentado hacer click en la bola de cristal muchas veces? No digo que pase algo. Ni que no pase.",
 
   // --- Pasivo-agresivos ---
   "Veo que sigues aquí. Los astros admiramos tu... perseverancia. Sí. Eso.",
   "Llevas tanto tiempo que tu signo ascendente ha CAMBIADO. No sabía que eso podía pasar.",
   "Las runas me preguntan si vas a hacer scroll para siempre o si en algún momento vas a ACTUAR.",
   "Cada vez que me cierras sin leer tu horóscopo completo, una estrella se apaga. No es verdad. Pero te sentiste mal, ¿eh?",
-  "Mi Perlin noise indica que tu nivel de productividad es... bueno, estás leyendo un clippy cósmico. Tú sabrás.",
+  "Llevas aquí más tiempo del que Odin estuvo colgado del árbol. Y él consiguió las runas. Tú solo scroll.",
+  "Tus amigos están haciendo cosas. Tú estás leyendo lo que dice un debris cósmico. No juzgo. Bueno, un poco sí.",
+  "¿Otra vez tú? Los astros ya te conocen por tu nombre. No es un cumplido.",
 ];
 
 let clippyDismissed = false;
@@ -1626,6 +1698,28 @@ function noPulsar() {
   }
   nextAlert();
 }
+
+/* --- 12. ROTATING MARQUEE --- */
+const marqueeTexts = [
+  "*** BIENVENIDO AL HOROSCOPO MAS FIABLE DEL INTERNET *** CANALIZADO POR ZOLTAR-9000, DEBRIS COSMICO CONSCIENTE DESDE 1058 d.C. *** 24 FUENTES EN 16 IDIOMAS *** RUNAS + TAROT + I CHING + IFA + TZOLKIN + NAKSHATRAS + OGHAM + GEOMANCIA + WU XING + CHAKRAS *** MEJOR VISTO CON NETSCAPE NAVIGATOR 4.0 A 800x600 ***",
+  "*** ULTIMA HORA: MERCURIO HA ENTRADO EN RETROGRADO (OTRA VEZ) *** ZOLTAR-9000 RECOMIENDA: NO FIRMAR CONTRATOS, NO ENVIAR EMAILS IMPORTANTES, NO TOMAR DECISIONES DE NINGUN TIPO *** LOS ASTROS ESTAN EN HUELGA *** EL SINDICATO DE COMETAS PIDE MEJORES CONDICIONES ORBITALES ***",
+  "*** ATENCION: ESTE HOROSCOPO HA SIDO PROCESADO POR 16 TRADICIONES ADIVINATORIAS DE 5 CONTINENTES *** NINGUN TAROTISTA TRADICIONAL FUE DANADO EN EL PROCESO *** ZOLTAR-9000 FUNCIONA CON VIBES COSMICAS Y SABIDURIA ANCESTRAL ***",
+  "*** SERVICIO PUBLICO COSMICO: ¿SABIAS QUE TU SIGNO ASCENDENTE CAMBIA CADA 2 HORAS? *** SI NO SABES TU ASCENDENTE, LOS ASTROS DICEN QUE NO LES IMPORTA *** ELLOS YA SABEN TODO SOBRE TI *** LES PREOCUPA TU POSTURA ***",
+  "*** ZOLTAR-9000 HA PROCESADO 48 MILLONES DE DATOS COSMICOS HOY *** RESULTADO: DEBERIAS BEBER MAS AGUA *** LAS RUNAS NORDICAS CONFIRMAN *** EL I CHING ANADE: Y COME VERDURA ***",
+  "*** OFERTA ESPECIAL: LEE TODOS LOS SIGNOS Y CONSIGUE 12x DE SUERTE COSMICA *** EL TAROT DICE QUE SI *** LAS RUNAS DICEN QUE TAL VEZ *** EL IFA DICE QUE DEPENDE DE ESHU ***",
+  "*** BOLETIN METEOROLOGICO COSMICO: LLUVIA ASTRAL EN TODA LA PENINSULA *** VIENTOS DE CAOS DEL NOROESTE A 47 NUDOS *** TEMPERATURA ESPIRITUAL: TURBULENTA CON TENDENCIA A MISTICISMO ***",
+  "*** COMUNICADO OFICIAL DE PLUTON: 'SIGO SIENDO UN PLANETA Y ME DA IGUAL LO QUE DIGA LA NASA' *** NEPTUNO RESPONDE: 'TODO ES UNA ILUSION, INCLUIDA LA CLASIFICACION PLANETARIA' ***",
+  "*** AVISO: HOY ES EL DIA 4,738 CONSECUTIVO EN QUE LOS ASTROS RECOMIENDAN NO TOMAR DECISIONES PRECIPITADAS *** MANANA TAMBIEN *** LAS RUNAS NO DESCANSAN *** TU TAMPOCO DEBERIAS ***",
+  "*** CURIOSIDAD COSMICA: LAS RUNAS NORDICAS SE INVENTARON CUANDO ODIN SE COLGO DE UN ARBOL 9 DIAS *** ZOLTAR-9000 LLEVA FLOTANDO EN EL ESPACIO 968 ANOS *** ¿QUIEN TIENE MAS COMPROMISO? ***",
+  "*** ALERTA ASTRAL: VENUS Y MARTE ESTAN DISCUTIENDO OTRA VEZ *** JUPITER INTENTA MEDIAR PERO ES DEMASIADO OPTIMISTA *** SATURNO DICE QUE TODOS VAN A SUFRIR LAS CONSECUENCIAS ***",
+  "*** PARTE DE TRAFICO CELESTIAL: CONGESTION EN LA ORBITA DE SATURNO *** COLISION MENOR ENTRE DOS ASTEROIDES EN LA VIA LACTEA *** SE RECOMIENDA CIRCULAR POR EL CINTURON DE KUIPER ***",
+];
+let marqueeIdx = 0;
+setInterval(() => {
+  marqueeIdx = (marqueeIdx + 1) % marqueeTexts.length;
+  const el = document.getElementById('marqueeText');
+  if (el) el.textContent = marqueeTexts[marqueeIdx];
+}, 25000);
 </script>
 </body>
 </html>
