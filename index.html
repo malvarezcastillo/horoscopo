@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>~*~*~ HOROSCOPO FIABLE ~*~*~ Powered by ZOLTAR-9000 ~*~*~</title>
+<style>
+/* ====== THE MOST 90s CSS EVER WRITTEN ====== */
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Comic+Neue:wght@700&display=swap');
+
+body {
+  background-color: #000033;
+  background-image:
+    url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='3' cy='3' r='1' fill='%23ffffff33'/%3E%3Ccircle cx='33' cy='17' r='0.7' fill='%23ffffff22'/%3E%3Ccircle cx='50' cy='40' r='1.2' fill='%23ffffff44'/%3E%3Ccircle cx='15' cy='50' r='0.5' fill='%23ffffff33'/%3E%3C/svg%3E");
+  color: #00ff00;
+  font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+  margin: 0;
+  overflow-x: hidden;
+  /* Crystal ball cursor */
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ctext y='24' font-size='24'%3E🔮%3C/text%3E%3C/svg%3E") 12 12, auto;
+}
+
+a, button, .sign-header, .zodiac-nav a {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ctext y='24' font-size='24'%3E✨%3C/text%3E%3C/svg%3E") 12 12, pointer;
+}
+
+::selection {
+  background: #ff00ff;
+  color: #ffff00;
+}
+
+/* The sacred marquee energy */
+@keyframes marquee {
+  0% { transform: translateX(100vw); }
+  100% { transform: translateX(-100%); }
+}
+
+@keyframes rainbow {
+  0% { color: #ff0000; }
+  14% { color: #ff7700; }
+  28% { color: #ffff00; }
+  42% { color: #00ff00; }
+  57% { color: #0000ff; }
+  71% { color: #8b00ff; }
+  85% { color: #ff00ff; }
+  100% { color: #ff0000; }
+}
+
+@keyframes blink90s {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes scanline {
+  0% { top: -100%; }
+  100% { top: 100%; }
+}
+
+/* CRT scanline overlay */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0,0,0,0.1) 2px,
+    rgba(0,0,0,0.1) 4px
+  );
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.marquee-bar {
+  background: linear-gradient(90deg, #ff0000, #ff7700, #ffff00, #00ff00, #0000ff, #8b00ff, #ff00ff);
+  padding: 4px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border-top: 3px ridge #c0c0c0;
+  border-bottom: 3px ridge #c0c0c0;
+}
+
+.marquee-bar span {
+  display: inline-block;
+  animation: marquee 20s linear infinite;
+  color: #000;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 10px;
+  text-shadow: 1px 1px 0 #fff;
+}
+
+.header {
+  text-align: center;
+  padding: 20px;
+  background: radial-gradient(ellipse, #000066, #000022);
+  border-bottom: 5px ridge #9933ff;
+}
+
+.header h1 {
+  font-family: 'Press Start 2P', monospace;
+  font-size: clamp(14px, 4vw, 28px);
+  animation: rainbow 3s linear infinite;
+  text-shadow: 3px 3px 0 #000, 0 0 20px #ff00ff, 0 0 40px #ff00ff;
+  margin: 10px 0;
+  line-height: 1.6;
+}
+
+.crystal-ball {
+  font-size: 80px;
+  display: inline-block;
+  animation: float 3s ease-in-out infinite, pulse 2s ease-in-out infinite;
+  filter: drop-shadow(0 0 20px #9933ff);
+}
+
+.subtitle {
+  color: #ffff00;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 9px;
+  animation: blink90s 1s step-end infinite;
+  margin-top: 10px;
+}
+
+.visitor-counter {
+  background: #000;
+  border: 2px inset #808080;
+  display: inline-block;
+  padding: 4px 12px;
+  margin-top: 15px;
+  font-family: 'Courier New', monospace;
+  color: #00ff00;
+  font-size: 12px;
+}
+
+.stats-bar {
+  background: linear-gradient(180deg, #330066, #000033);
+  border: 3px ridge #9933ff;
+  padding: 10px;
+  margin: 10px 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #00ffff;
+}
+
+.stats-bar .stat {
+  display: inline-block;
+  margin: 5px 15px;
+  padding: 5px 10px;
+  border: 1px solid #00ffff;
+  background: rgba(0, 255, 255, 0.05);
+}
+
+.date-display {
+  font-family: 'Press Start 2P', monospace;
+  font-size: clamp(10px, 2.5vw, 16px);
+  color: #ff6600;
+  text-shadow: 2px 2px 0 #000;
+  text-align: center;
+  padding: 15px;
+}
+
+/* Zodiac navigation ring */
+.zodiac-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+  padding: 10px 20px;
+  background: #000011;
+  border-top: 2px groove #666;
+  border-bottom: 2px groove #666;
+}
+
+.zodiac-nav a {
+  display: inline-block;
+  padding: 6px 10px;
+  border: 2px outset #9933ff;
+  background: linear-gradient(180deg, #330066, #110033);
+  color: #ffff00;
+  text-decoration: none;
+  font-size: 13px;
+  cursor: pointer;
+  transition: none; /* NO transitions. This is the 90s. */
+}
+
+.zodiac-nav a:hover {
+  background: #ff00ff;
+  color: #000;
+  border-style: inset;
+}
+
+.zodiac-nav a.active {
+  background: #ffff00;
+  color: #000;
+  border-style: inset;
+}
+
+/* Sign cards */
+.signs-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 10px 20px;
+}
+
+.sign-card {
+  background: linear-gradient(135deg, #0a0a2e, #1a0a3e);
+  border: 3px ridge #9933ff;
+  margin: 20px 0;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.sign-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #ff0000, #ff7700, #ffff00, #00ff00, #0000ff, #8b00ff, #ff00ff);
+}
+
+.sign-header {
+  background: linear-gradient(90deg, #330066, #660066, #330066);
+  padding: 12px 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 2px groove #9933ff;
+  cursor: pointer;
+}
+
+.sign-emoji {
+  font-size: 36px;
+  animation: spin 8s linear infinite;
+}
+
+.sign-name {
+  font-family: 'Press Start 2P', monospace;
+  font-size: clamp(12px, 3vw, 18px);
+  animation: rainbow 4s linear infinite;
+  text-shadow: 2px 2px 0 #000;
+  flex-grow: 1;
+}
+
+.sign-toggle {
+  color: #ffff00;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 10px;
+}
+
+.sign-body {
+  padding: 15px;
+}
+
+.horoscope-text {
+  color: #00ff99;
+  font-size: 15px;
+  line-height: 1.7;
+  padding: 15px;
+  border: 1px dashed #00ff99;
+  background: rgba(0, 255, 153, 0.03);
+  margin-bottom: 15px;
+}
+
+.horoscope-text .verdict {
+  display: block;
+  margin-top: 10px;
+  color: #ffff00;
+  font-weight: bold;
+  text-shadow: 1px 1px 0 #ff6600;
+}
+
+/* Noise artifacts panel */
+.noise-panel {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 8px;
+}
+
+.noise-item {
+  background: #0a0a1e;
+  border: 2px inset #666;
+  padding: 8px;
+  font-size: 11px;
+}
+
+.noise-item .noise-label {
+  color: #ff6600;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 8px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.noise-item .noise-value {
+  color: #00ffff;
+  white-space: pre-line;
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+/* Under construction banner */
+.construction {
+  text-align: center;
+  padding: 15px;
+  background: repeating-linear-gradient(
+    45deg,
+    #ffff00,
+    #ffff00 10px,
+    #000 10px,
+    #000 20px
+  );
+  border: 3px ridge #808080;
+  margin: 20px;
+}
+
+.construction span {
+  background: #000;
+  color: #ffff00;
+  padding: 5px 15px;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 10px;
+}
+
+/* Webring */
+.webring {
+  text-align: center;
+  padding: 20px;
+  border-top: 3px ridge #666;
+  background: #000011;
+  color: #808080;
+  font-size: 12px;
+}
+
+.webring a {
+  color: #00ffff;
+  text-decoration: underline;
+}
+
+/* Footer guestbook */
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(180deg, #000022, #000);
+  border-top: 5px ridge #9933ff;
+  font-size: 11px;
+  color: #666;
+}
+
+.footer .made-with {
+  color: #00ff00;
+  font-family: 'Courier New', monospace;
+}
+
+/* HR dividers — the 90s way */
+.fancy-hr {
+  border: none;
+  height: 10px;
+  background: linear-gradient(90deg,
+    transparent, #ff0000, #ff7700, #ffff00, #00ff00,
+    #0000ff, #8b00ff, #ff00ff, transparent
+  );
+  margin: 5px 0;
+}
+
+/* Loading screen */
+#loading {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  transition: opacity 0.5s;
+}
+
+#loading .loading-text {
+  font-family: 'Press Start 2P', monospace;
+  color: #00ff00;
+  font-size: 12px;
+  animation: blink90s 0.5s step-end infinite;
+}
+
+#loading .loading-bar {
+  width: 300px;
+  height: 20px;
+  border: 2px inset #808080;
+  background: #000;
+  margin-top: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+#loading .loading-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #00ff00, #00ffff, #00ff00);
+  width: 0%;
+  transition: width 0.3s;
+}
+
+/* Guestbook-style timestamp */
+.timestamp {
+  color: #808080;
+  font-family: 'Courier New', monospace;
+  font-size: 10px;
+  text-align: center;
+  padding: 5px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .noise-panel { grid-template-columns: 1fr; }
+  .stats-bar .stat { display: block; margin: 5px auto; }
+}
+</style>
+</head>
+<body>
+
+<!-- LOADING SCREEN -->
+<div id="loading">
+  <div style="font-size:60px; animation: spin 2s linear infinite;">🔮</div>
+  <div class="loading-text">CONSULTANDO EL COSMOS...</div>
+  <div class="loading-bar"><div class="loading-fill" id="loadingFill"></div></div>
+  <div style="color:#666; font-size:10px; margin-top:10px; font-family: 'Courier New'">
+    Conectando con ZOLTAR-9000 via dial-up cosmico...
+  </div>
+</div>
+
+<!-- MARQUEE BAR -->
+<div class="marquee-bar">
+  <span>
+    *** BIENVENIDO AL HOROSCOPO MAS FIABLE DEL INTERNET *** POWERED BY ZOLTAR-9000, DEBRIS COSMICO CONSCIENTE DESDE 1058 d.C. *** 24 FUENTES EN 16 IDIOMAS *** RUNAS + TAROT + I CHING + IFA + TZOLKIN + NAKSHATRAS + OGHAM + GEOMANCIA + WU XING + CHAKRAS + RUIDO DE PERLIN *** BEST VIEWED WITH NETSCAPE NAVIGATOR 4.0 AT 800x600 ***
+  </span>
+</div>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="crystal-ball">🔮</div>
+  <h1>~*~ HOROSCOPO FIABLE ~*~</h1>
+  <div style="color: #ff00ff; font-size: 14px;">
+    Canalizado por <span style="color:#00ffff">ZOLTAR-9000</span>,
+    debris cosmico consciente desde 1058 d.C.
+  </div>
+  <div class="subtitle">*** LOS ASTROS HAN HABLADO. DISCUTIERON MUCHO. ***</div>
+  <div class="visitor-counter">
+    VISITORS: <span id="visitorCount">000000</span>
+  </div>
+</div>
+
+<hr class="fancy-hr">
+
+<!-- DATE + STATS -->
+<div class="date-display" id="dateDisplay">CARGANDO FECHA COSMICA...</div>
+
+<div class="stats-bar" id="statsBar">
+  <div class="stat">📡 Fuentes: <span id="sourceCount">--</span></div>
+  <div class="stat">🌐 Idiomas: <span id="langCount">--</span></div>
+  <div class="stat" id="moonStat">🌙 Luna: --</div>
+</div>
+
+<!-- ZODIAC NAV -->
+<nav class="zodiac-nav" id="zodiacNav"></nav>
+
+<hr class="fancy-hr">
+
+<!-- SIGNS -->
+<div class="signs-container" id="signsContainer">
+</div>
+
+<!-- UNDER CONSTRUCTION -->
+<div class="construction">
+  <span>🚧 PAGINA EN CONSTRUCCION PERMANENTE 🚧</span>
+</div>
+
+<!-- WEBRING -->
+<div class="webring">
+  <div style="margin-bottom:8px">
+    [ <a href="#">&lt;&lt; Prev</a> |
+    <span style="color:#ffff00">🔮 Anillo Web de Astrologia Cosmica 🔮</span> |
+    <a href="#">Next &gt;&gt;</a> ]
+  </div>
+  <div style="font-size:10px">
+    Este sitio es miembro del <span style="color:#ff00ff">Cosmic Debris Webring</span> desde 1058 d.C.
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="made-with">
+    Made with 🔮 by ZOLTAR-9000 | Claude Opus 4.6 | Python 3.12 | Perlin Noise
+  </div>
+  <div style="margin-top:8px">
+    <span style="color:#ff6600">Best viewed with Netscape Navigator 4.0</span> |
+    <span style="color:#00ffff">800x600 resolution</span> |
+    <span style="color:#ff00ff">16-bit color</span>
+  </div>
+  <div style="margin-top:8px; color:#333">
+    No celestial bodies were harmed in the making of these horoscopes.
+    <br>ZOLTAR-9000 is not responsible for any decisions made based on Perlin noise.
+  </div>
+</div>
+
+<script>
+const DAY_NAMES = ['Domingo','Lunes','Martes','Miercoles','Jueves','Viernes','Sabado'];
+const MONTH_NAMES = ['','Enero','Febrero','Marzo','Abril','Mayo','Junio',
+                     'Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+
+const NOISE_LABELS = {
+  tarot: '🎴 Tarot',
+  iching: '☯️ I Ching',
+  norse_runes: 'ᚱ Runas Nordicas',
+  mayan_tzolkin: '🗿 Tzolkin Maya',
+  vedic_nakshatra: '🕉️ Nakshatra Vedico',
+  yoruba_ifa: '🥁 Ifa Yoruba',
+  celtic_ogham: '🌳 Ogham Celta',
+  arabic_geomancy: '🏜️ Geomancia Arabe',
+  wu_xing: '☯ Wu Xing (五行)',
+  chakra_alignment: '🧘 Chakras',
+  perlin_emojis: '📡 Glifos de Perlin',
+  numerology: '🔢 Numerologia',
+  biorhythm: '📊 Bioritmo',
+  chaos_rating: '🌀 Coeficiente de Caos',
+  element_color: '🔥 Elemento & Color',
+  moon_phase: '🌙 Fase Lunar',
+};
+
+// Fake visitor counter
+const fakeVisitors = 48131 + Math.floor((Date.now() - new Date('2026-01-01').getTime()) / 60000);
+document.getElementById('visitorCount').textContent = String(fakeVisitors).padStart(6, '0');
+
+// Loading animation
+let loadPct = 0;
+const loadInterval = setInterval(() => {
+  loadPct = Math.min(loadPct + Math.random() * 15 + 5, 95);
+  document.getElementById('loadingFill').style.width = loadPct + '%';
+}, 200);
+
+function finishLoading() {
+  clearInterval(loadInterval);
+  document.getElementById('loadingFill').style.width = '100%';
+  setTimeout(() => {
+    const el = document.getElementById('loading');
+    el.style.opacity = '0';
+    setTimeout(() => el.style.display = 'none', 500);
+  }, 400);
+}
+
+function extractVerdict(text) {
+  const idx = text.indexOf('VEREDICTO');
+  if (idx === -1) return { body: text, verdict: null };
+  // Find the "VEREDICTO CÓSMICO:" prefix
+  const colonIdx = text.indexOf(':', idx);
+  if (colonIdx === -1) return { body: text, verdict: null };
+  return {
+    body: text.substring(0, idx).trim(),
+    verdict: text.substring(colonIdx + 1).trim()
+  };
+}
+
+function renderSign(sign) {
+  const { body, verdict } = extractVerdict(sign.horoscope);
+  const noiseKeys = Object.keys(NOISE_LABELS).filter(k => sign[k]);
+
+  let noiseHtml = '';
+  for (const key of noiseKeys) {
+    const label = NOISE_LABELS[key] || key;
+    const val = sign[key].replace(/</g, '&lt;').replace(/\n/g, '<br>');
+    noiseHtml += `
+      <div class="noise-item">
+        <span class="noise-label">${label}</span>
+        <span class="noise-value">${val}</span>
+      </div>`;
+  }
+
+  const verdictHtml = verdict
+    ? `<span class="verdict">VEREDICTO COSMICO: ${verdict}</span>`
+    : '';
+
+  return `
+    <div class="sign-card" id="sign-${sign.sign}">
+      <div class="sign-header" onclick="toggleSign('${sign.sign}')">
+        <span class="sign-emoji">${sign.emoji}</span>
+        <span class="sign-name">${sign.name_es.toUpperCase()}</span>
+        <span class="sign-toggle" id="toggle-${sign.sign}">[+]</span>
+      </div>
+      <div class="sign-body" id="body-${sign.sign}" style="display:none">
+        <div class="horoscope-text">
+          ${body}
+          ${verdictHtml}
+        </div>
+        <div class="noise-panel">
+          ${noiseHtml}
+        </div>
+      </div>
+    </div>`;
+}
+
+function toggleSign(sign) {
+  const body = document.getElementById('body-' + sign);
+  const toggle = document.getElementById('toggle-' + sign);
+  if (body.style.display === 'none') {
+    body.style.display = 'block';
+    toggle.textContent = '[-]';
+    // Mark nav as active
+    document.querySelectorAll('.zodiac-nav a').forEach(a => a.classList.remove('active'));
+    const navLink = document.querySelector(`.zodiac-nav a[data-sign="${sign}"]`);
+    if (navLink) navLink.classList.add('active');
+  } else {
+    body.style.display = 'none';
+    toggle.textContent = '[+]';
+  }
+}
+
+async function loadData() {
+  try {
+    const resp = await fetch('data/horoscopo.json', { cache: 'no-cache' });
+    const data = await resp.json();
+
+    // Date
+    const d = new Date(data.date + 'T00:00:00');
+    const dayName = DAY_NAMES[d.getDay()];
+    const monthName = MONTH_NAMES[d.getMonth() + 1];
+    document.getElementById('dateDisplay').innerHTML =
+      `&#x2728; ${dayName} ${d.getDate()} de ${monthName} ${d.getFullYear()} &#x2728;`;
+
+    // Stats
+    document.getElementById('sourceCount').textContent = data.source_count;
+    document.getElementById('langCount').textContent = data.lang_count;
+    if (data.signs.length > 0 && data.signs[0].moon_phase) {
+      document.getElementById('moonStat').innerHTML =
+        `${data.signs[0].moon_phase.split(' ')[0]} Luna: ${data.signs[0].moon_phase}`;
+    }
+
+    // Zodiac nav
+    const nav = document.getElementById('zodiacNav');
+    nav.innerHTML = data.signs.map(s =>
+      `<a href="#sign-${s.sign}" data-sign="${s.sign}" onclick="event.preventDefault(); toggleSign('${s.sign}'); document.getElementById('sign-${s.sign}').scrollIntoView({behavior:'smooth'})">${s.emoji} ${s.name_es}</a>`
+    ).join('');
+
+    // Sign cards
+    document.getElementById('signsContainer').innerHTML =
+      data.signs.map(renderSign).join('');
+
+    // Auto-open first sign
+    if (data.signs.length > 0) {
+      toggleSign(data.signs[0].sign);
+    }
+
+    finishLoading();
+  } catch (e) {
+    console.error(e);
+    document.getElementById('signsContainer').innerHTML = `
+      <div style="text-align:center; padding:40px; color:#ff0000; font-family:'Press Start 2P',monospace; font-size:12px">
+        ERROR: NO SE PUDO CONTACTAR CON ZOLTAR-9000<br><br>
+        <span style="color:#666; font-size:9px">Puede que el debris cosmico este fuera de rango.<br>Intente de nuevo cuando Mercurio no este retrogrado.</span>
+      </div>`;
+    finishLoading();
+  }
+}
+
+loadData();
+</script>
+</body>
+</html>
