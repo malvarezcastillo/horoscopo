@@ -88,7 +88,7 @@ def invoke_claude(prompt: str) -> str:
         input=prompt,
         capture_output=True,
         text=True,
-        timeout=600,
+        timeout=1500,
     )
     if result.returncode != 0:
         print(f"Claude stderr: {result.stderr}", file=sys.stderr)

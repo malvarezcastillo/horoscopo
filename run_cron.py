@@ -35,11 +35,15 @@ def main():
         step.detail = r.stdout.strip() if r.stdout else "done"
 
     with report.step("divine_horoscopes") as step:
-        r = _run(f"{PY} diviner.py", timeout=600, env_override=claude_env)
+        r = _run(f"{PY} diviner.py", timeout=1500, env_override=claude_env)
         step.detail = r.stdout.strip().split("\n")[-1] if r.stdout else "done"
+
+    divine_ok = report.steps[-1].status == "ok"
 
     if os.environ.get("TELEGRAM_CHANNEL"):
         with report.step("telegram_publish") as step:
+            if not divine_ok:
+                step.skip("divine_horoscopes failed")
             try:
                 r = _run(f"{PY} telegram_publish.py", timeout=120)
                 step.detail = r.stdout.strip().split("\n")[-1] if r.stdout else "done"
@@ -47,10 +51,14 @@ def main():
                 step.warn(f"Non-fatal: {e}")
 
     with report.step("export_json") as step:
+        if not divine_ok:
+            step.skip("divine_horoscopes failed")
         r = _run(f"{PY} export_json.py", timeout=60)
         step.detail = r.stdout.strip() if r.stdout else "done"
 
     with report.step("push_site") as step:
+        if not divine_ok:
+            step.skip("divine_horoscopes failed")
         _run('git add docs/data/horoscopo.json', timeout=30)
         r = _run('git diff --cached --quiet', check=False, timeout=10)
         if r.returncode != 0:
